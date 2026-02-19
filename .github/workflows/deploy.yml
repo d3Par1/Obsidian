@@ -1,0 +1,74 @@
+name: Deploy Notes to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # allow manual trigger from GitHub UI
+
+# Allow one concurrent deployment
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout vault
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Clone Quartz framework
+        run: git clone --depth 1 https://github.com/jackyzha0/quartz.git /tmp/quartz
+
+      - name: Install Quartz dependencies
+        run: npm ci --prefix /tmp/quartz
+
+      - name: Copy vault notes into Quartz content folder
+        run: |
+          # Copy all .md files from vault root, preserving folders
+          # Exclude .obsidian config, .git, system files
+          rsync -av --include="*/" --include="*.md" \
+            --exclude=".obsidian/" \
+            --exclude=".git/" \
+            --exclude=".github/" \
+            --exclude="*.ps1" \
+            --exclude="node_modules/" \
+            --exclude="*.json" \
+            --exclude="*.css" \
+            --exclude="*.js" \
+            --exclude="LICENSE" \
+            ./ /tmp/quartz/content/
+
+      - name: Patch Quartz config (site name + base URL)
+        run: |
+          cd /tmp/quartz
+          # Update site title and base URL in quartz.config.ts
+          sed -i "s/pageTitle: \".*\"/pageTitle: \"KPI Notes\"/" quartz.config.ts
+          sed -i "s/baseUrl: \".*\"/baseUrl: \"d3Par1.github.io\/Obsidian\"/" quartz.config.ts
+
+      - name: Build Quartz site
+        run: npx quartz build --directory /tmp/quartz --output /tmp/quartz/public
+        working-directory: /tmp/quartz
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: /tmp/quartz/public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
