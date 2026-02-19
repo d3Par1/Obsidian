@@ -1,0 +1,15 @@
+# Obsidian workspace state (device-specific, changes every session)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# Trash
+.trash/
+
+# System
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node (if any scripts land here)
+node_modules/
