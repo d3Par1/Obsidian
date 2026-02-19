@@ -1,0 +1,11 @@
+{
+  "executeTemplate": "code \"{{vaultpath}}\" \"{{filepath}}\":{{line}}",
+  "useUrlInsiders": false,
+  "ribbon": {
+    "enabled": true,
+    "icon": "code-2",
+    "title": "Open in VS Code"
+  },
+  "openFileInCurrentWindow": false,
+  "workspacePath": ""
+}
