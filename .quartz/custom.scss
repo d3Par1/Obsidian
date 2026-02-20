@@ -1,0 +1,88 @@
+@use "./base.scss";
+
+// Typography
+h1 {
+  font-size: 1.85rem;
+  margin-top: 2rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.45rem;
+  margin-top: 1.8rem;
+  color: var(--secondary);
+  border-bottom: 1px solid var(--lightgray);
+  padding-bottom: 0.3rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-top: 1.5rem;
+}
+
+p, li {
+  line-height: 1.75;
+}
+
+// Code blocks
+pre {
+  border-radius: 8px !important;
+  border: 1px solid var(--lightgray) !important;
+}
+
+code {
+  font-size: 0.9em;
+}
+
+// Links
+a.internal {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+// Blockquotes
+blockquote {
+  border-left: 3px solid var(--secondary);
+  padding: 0.5rem 1rem;
+  background: var(--highlight);
+  border-radius: 0 6px 6px 0;
+}
+
+// Tables
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background: var(--highlight);
+  font-weight: 600;
+}
+
+td, th {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--lightgray);
+}
+
+// Explorer sidebar
+.explorer {
+  .folder-title {
+    font-weight: 600;
+  }
+}
+
+// Page title
+.page-title {
+  font-weight: 700;
+}
+
+// Smooth transitions for dark mode
+* {
+  transition: background-color 0.2s ease, color 0.15s ease, border-color 0.2s ease;
+}
+
+// Graph styling
+.graph {
+  border-radius: 8px;
+  border: 1px solid var(--lightgray);
+}

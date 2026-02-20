@@ -32,14 +32,12 @@ jobs:
         with:
           node-version: 22
 
-      # This action auto-enables GitHub Pages on the repo (no manual setup needed)
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
       - name: Clone Quartz
         run: git clone --depth 1 https://github.com/jackyzha0/quartz.git /tmp/quartz
 
-      # npm install (not npm ci) because we don't have a lockfile from the clone
       - name: Install Quartz dependencies
         working-directory: /tmp/quartz
         run: npm install
@@ -51,16 +49,16 @@ jobs:
             --exclude=".obsidian/" \
             --exclude=".git/" \
             --exclude=".github/" \
+            --exclude=".quartz/" \
             --prune-empty-dirs \
             ./ /tmp/quartz/content/
 
-      - name: Set site title and base URL
-        working-directory: /tmp/quartz
+      - name: Apply custom theme
         run: |
-          sed -i 's/pageTitle: ".*"/pageTitle: "KPI Notes"/' quartz.config.ts
-          sed -i 's/baseUrl: ".*"/baseUrl: "d3par1.github.io\/Obsidian"/' quartz.config.ts
+          cp .quartz/quartz.config.ts /tmp/quartz/quartz.config.ts
+          cp .quartz/quartz.layout.ts /tmp/quartz/quartz.layout.ts
+          cp .quartz/custom.scss /tmp/quartz/quartz/styles/custom.scss
 
-      # Correct Quartz v4 build command — just "npx quartz build"
       - name: Build Quartz
         working-directory: /tmp/quartz
         run: npx quartz build
