@@ -205,4 +205,1194 @@ const chart = new Chart(ctx, {
     datasets: [{ 
       label: 'Потужність (кВт)', 
       data: [120, 150, 180, 160], 
-      bor
+      borderColor: 'rgb(75, 192, 192)', 
+      tension: 0.1 
+    }] 
+  }, 
+  options: { 
+    responsive: true, 
+    scales: { 
+
+5 
+ 
+      y: { 
+        beginAtZero: true 
+      } 
+    } 
+  } 
+}); 
+ 
+// Оновлення даних графіка 
+function updateChart(newData) { 
+  chart.data.labels.push(newData.time); 
+  chart.data.datasets[0].data.push(newData.value); 
+   
+  // Обмеження кількості точок 
+  if (chart.data.labels.length > 20) { 
+    chart.data.labels.shift(); 
+    chart.data.datasets[0].data.shift(); 
+  } 
+   
+  chart.update(); 
+} 
+Динамічні таблиці 
+function createTable(data) { 
+  const table = document.createElement('table'); 
+  table.className = 'table table-striped'; 
+   
+  // Заголовок 
+  const thead = document.createElement('thead'); 
+  const headerRow = document.createElement('tr'); 
+  Object.keys(data[0]).forEach(key => { 
+    const th = document.createElement('th'); 
+    th.textContent = key; 
+    headerRow.appendChild(th); 
+  }); 
+  thead.appendChild(headerRow); 
+  table.appendChild(thead); 
+   
+  // Дані 
+  const tbody = document.createElement('tbody'); 
+  data.forEach(item => { 
+    const row = document.createElement('tr'); 
+    Object.values(item).forEach(value => { 
+      const td = document.createElement('td'); 
+      td.textContent = value; 
+      row.appendChild(td); 
+    }); 
+    tbody.appendChild(row); 
+  }); 
+  table.appendChild(tbody); 
+   
+  return table; 
+} 
+
+6 
+ 
+5.2. Приклад повної реалізації 
+5.2.1.Приклад повного застосунку 
+html: 
+<!DOCTYPE html> 
+<html lang="uk"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Моніторинг енергостанції</title> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+rel="stylesheet"> 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+  <style> 
+    .status-online { color: green; font-weight: bold; } 
+    .status-offline { color: red; font-weight: bold; } 
+    .metric-card { 
+      border: 1px solid #ddd; 
+      border-radius: 8px; 
+      padding: 15px; 
+      margin: 10px 0; 
+    } 
+  </style> 
+</head> 
+<body> 
+  <div class="container mt-4"> 
+    <h1>Моніторинг сонячної електростанції</h1> 
+    <div class="row"> 
+      <div class="col-md-4"> 
+        <div class="metric-card"> 
+          <h3>Поточна потужність</h3> 
+          <h2 id="currentPower">-- кВт</h2> 
+          <p>Статус: <span id="status">--</span></p> 
+        </div> 
+      </div> 
+      <div class="col-md-4"> 
+        <div class="metric-card"> 
+          <h3>Добова генерація</h3> 
+          <h2 id="dailyEnergy">-- кВт·год</h2> 
+        </div> 
+      </div> 
+      <div class="col-md-4"> 
+        <div class="metric-card"> 
+          <h3>Ефективність</h3> 
+          <h2 id="efficiency">-- %</h2> 
+        </div> 
+      </div> 
+    </div> 
+     
+    <div class="row mt-4"> 
+      <div class="col-md-12"> 
+        <h3>Графік потужності</h3> 
+        <canvas id="powerChart"></canvas> 
+      </div> 
+
+7 
+ 
+    </div> 
+     
+    <div class="row mt-4"> 
+      <div class="col-md-12"> 
+        <h3>Історія вимірювань</h3> 
+        <div id="dataTable"></div> 
+      </div> 
+    </div> 
+  </div> 
+ 
+  <script src="app.js"></script> 
+</body> 
+</html> 
+ 
+javascript: 
+// app.js 
+class EnergyMonitor { 
+  constructor() { 
+    this.chart = null; 
+    this.dataHistory = []; 
+    this.initChart(); 
+    this.connectWebSocket(); 
+  } 
+   
+  initChart() { 
+    const ctx = document.getElementById('powerChart').getContext('2d'); 
+    this.chart = new Chart(ctx, { 
+      type: 'line', 
+      data: { 
+        labels: [], 
+        datasets: [{ 
+          label: 'Потужність (кВт)', 
+          data: [], 
+          borderColor: 'rgb(255, 159, 64)', 
+          backgroundColor: 'rgba(255, 159, 64, 0.2)', 
+          tension: 0.4 
+        }] 
+      }, 
+      options: { 
+        responsive: true, 
+        scales: { 
+          y: { 
+            beginAtZero: true, 
+            title: { 
+              display: true, 
+              text: 'Потужність (кВт)' 
+            } 
+          }, 
+          x: { 
+            title: { 
+              display: true, 
+              text: 'Час' 
+            } 
+          } 
+
+8 
+ 
+        } 
+      } 
+    }); 
+  } 
+   
+  connectWebSocket() { 
+    this.socket = new WebSocket('ws://localhost:8080'); 
+     
+    this.socket.onopen = () => { 
+      console.log('Connected to server'); 
+      document.getElementById('status').textContent = 'Онлайн'; 
+      document.getElementById('status').className = 'status-online'; 
+    }; 
+     
+    this.socket.onmessage = (event) => { 
+      const data = JSON.parse(event.data); 
+      this.updateDisplay(data); 
+    }; 
+     
+    this.socket.onerror = (error) => { 
+      console.error('WebSocket error:', error); 
+      document.getElementById('status').textContent = 'Помилка'; 
+      document.getElementById('status').className = 'status-offline'; 
+    }; 
+     
+    this.socket.onclose = () => { 
+      console.log('Disconnected from server'); 
+      document.getElementById('status').textContent = 'Офлайн'; 
+      document.getElementById('status').className = 'status-offline'; 
+       
+      // Спроба перепідключення через 5 секунд 
+      setTimeout(() => this.connectWebSocket(), 5000); 
+    }; 
+  } 
+   
+  updateDisplay(data) { 
+    // Оновлення метрик 
+    document.getElementById('currentPower').textContent =  
+      `${data.power.toFixed(2)} кВт`; 
+    document.getElementById('dailyEnergy').textContent =  
+      `${data.dailyEnergy.toFixed(2)} кВт·год`; 
+    document.getElementById('efficiency').textContent =  
+      `${data.efficiency.toFixed(1)} %`; 
+     
+    // Оновлення графіка 
+    const time = new Date(data.timestamp).toLocaleTimeString(); 
+    this.chart.data.labels.push(time); 
+    this.chart.data.datasets[0].data.push(data.power); 
+     
+    // Обмеження до 20 точок 
+    if (this.chart.data.labels.length > 20) { 
+      this.chart.data.labels.shift(); 
+      this.chart.data.datasets[0].data.shift(); 
+    } 
+
+9 
+ 
+     
+    this.chart.update(); 
+     
+    // Додавання до історії 
+    this.dataHistory.unshift(data); 
+    if (this.dataHistory.length > 10) { 
+      this.dataHistory.pop(); 
+    } 
+     
+    this.updateTable(); 
+  } 
+   
+  updateTable() { 
+    const tableDiv = document.getElementById('dataTable'); 
+    const table = document.createElement('table'); 
+    table.className = 'table table-striped table-hover'; 
+     
+    table.innerHTML = ` 
+      <thead> 
+        <tr> 
+          <th>Час</th> 
+          <th>Потужність (кВт)</th> 
+          <th>Напруга (В)</th> 
+          <th>Струм (А)</th> 
+          <th>Ефективність (%)</th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        ${this.dataHistory.map(item => ` 
+          <tr> 
+            <td>${new Date(item.timestamp).toLocaleTimeString()}</td> 
+            <td>${item.power.toFixed(2)}</td> 
+            <td>${item.voltage.toFixed(1)}</td> 
+            <td>${item.current.toFixed(2)}</td> 
+            <td>${item.efficiency.toFixed(1)}</td> 
+          </tr> 
+        `).join('')} 
+      </tbody> 
+    `; 
+     
+    tableDiv.innerHTML = ''; 
+    tableDiv.appendChild(table); 
+  } 
+} 
+ 
+// Ініціалізація при завантаженні сторінки 
+document.addEventListener('DOMContentLoaded', () => { 
+  const monitor = new EnergyMonitor(); 
+}); 
+ 
+Результат роботи програми наведено  на рис.5.1. 
+ 
+
+10 
+ 
+ 
+Рис. 5.1. Результат роботи програми 
+ 
+5.3. Структура звіту до практичної роботи 
+5.3.1. Титульна сторінка 
+- Назва університету, факультет, кафедра 
+- Назва дисципліни 
+- Номер та тема практичної роботи 
+- Варіант 
+- ПІБ студента, група 
+- ПІБ викладача 
+- Дата виконання 
+5.3.2. Мета роботи 
+Коротко описати мету практичної роботи 
+5.3.3. Теоретична частина 
+- REST API та Fetch 
+- WebSocket протокол 
+
+11 
+ 
+- Бібліотеки візуалізації 
+- Опис об'єкта автоматизації 
+- Перелік вимог до клієнтського веб-додатку 
+- Обґрунтування вибраних методів реалізації 
+5.3.4. Опис реалізації 
+5.3.4.1. Заняття 1 (2 години): Проєктування 
+Завдання: 
+1. Вивчити технічне завдання згідно варіанту 
+2. Спроєктувати структуру даних API 
+3. Розробити макет інтерфейсу (wireframe) 
+4. Визначити типи графіків та таблиць 
+5. Створити архітектуру клієнтського застосунку 
+Результат: Документ проєкту з описом: 
+ Структури JSON для API 
+ Ескізів інтерфейсу 
+ Переліку бібліотек та технологій 
+ Плану реалізації 
+ 
+5.3.4.2. Заняття 2 (2 години): Програмування 
+Завдання: 
+1. Створити HTML-структуру сторінки 
+2. Підключити бібліотеки (Bootstrap, Chart.js) 
+3. Реалізувати підключення до API (REST або WebSocket) 
+4. Програмування логіки отримання та обробки даних 
+5. Створення графіків та таблиць 
+6. Реалізація оновлення даних у реальному часі 
+Код проекту має включати: 
+ index.html - основна сторінка 
+ styles.css - власні стилі 
+ app.js - логіка застосунку 
+ api.js - модуль роботи з API 
+ charts.js - модуль візуалізації 
+ 
+5.3.4.3. Заняття 3 (2 години): Тестування та звітність 
+Завдання: 
+1. Тестування функціональності 
+2. Перевірка коректності відображення даних 
+3. Тестування responsive-дизайну 
+4. Оптимізація продуктивності 
+5. Оформлення звіту 
+Звіт має містити: 
+1. Титульний аркуш 
+2. Мету та завдання роботи 
+3. Теоретичні відомості 
+4. Опис реалізації (з кодом) 
+5. Скріншоти роботи застосунку 
+6. Аналіз результатів 
+7. Висновки 
+
+12 
+ 
+5.3.5. Тестування 
+5.3.5.1. Приклад коду для серверної частини (для тестування) 
+REST API сервер (Node.js + Express) 
+javascript: 
+// server.js 
+const express = require('express'); 
+const cors = require('cors'); 
+const app = express(); 
+ 
+app.use(cors()); 
+app.use(express.json()); 
+ 
+// Симуляція даних енергетичного об'єкта 
+let currentData = { 
+  timestamp: Date.now(), 
+  power: 150, 
+  voltage: 220, 
+  current: 0.68, 
+  frequency: 50, 
+  efficiency: 85, 
+  temperature: 45 
+}; 
+ 
+// Генерація випадкових даних 
+function generateData() { 
+  const variance = (base, range) => base + (Math.random() - 0.5) * range; 
+   
+  currentData = { 
+    timestamp: Date.now(), 
+    power: variance(150, 50), 
+    voltage: variance(220, 10), 
+    current: variance(0.68, 0.2), 
+    frequency: variance(50, 0.5), 
+    efficiency: variance(85, 10), 
+    temperature: variance(45, 15), 
+    dailyEnergy: variance(3600, 500) 
+  }; 
+} 
+ 
+// Оновлення даних кожні 2 секунди 
+setInterval(generateData, 2000); 
+ 
+// API endpoints 
+app.get('/api/data/current', (req, res) => { 
+  res.json(currentData); 
+}); 
+ 
+app.get('/api/data/history', (req, res) => { 
+  const history = []; 
+  const now = Date.now(); 
+   
+  for (let i = 24; i > 0; i--) { 
+
+13 
+ 
+    history.push({ 
+      timestamp: now - (i * 3600000), 
+      power: 100 + Math.random() * 100, 
+      energy: 150 + Math.random() * 50 
+    }); 
+  } 
+   
+  res.json(history); 
+}); 
+ 
+app.get('/api/status', (req, res) => { 
+  res.json({ 
+    status: 'online', 
+    uptime: process.uptime(), 
+    lastUpdate: currentData.timestamp 
+  }); 
+}); 
+ 
+const PORT = 3000; 
+app.listen(PORT, () => { 
+  console.log(`Server running on http://localhost:${PORT}`); 
+}); 
+WebSocket сервер 
+javascript: 
+// websocket-server.js 
+const WebSocket = require('ws'); 
+ 
+const wss = new WebSocket.Server({ port: 8080 }); 
+ 
+console.log('WebSocket server started on port 8080'); 
+ 
+// Функція генерації даних 
+function generateEnergyData() { 
+  return { 
+    timestamp: Date.now(), 
+    power: 100 + Math.random() * 100, 
+    voltage: 220 + (Math.random() - 0.5) * 10, 
+    current: 0.5 + Math.random() * 0.5, 
+    efficiency: 80 + Math.random() * 15, 
+    temperature: 40 + Math.random() * 20, 
+    dailyEnergy: 3000 + Math.random() * 1000 
+  }; 
+} 
+ 
+wss.on('connection', (ws) => { 
+  console.log('Client connected'); 
+   
+  // Відправка даних кожні 2 секунди 
+  const interval = setInterval(() => { 
+    if (ws.readyState === WebSocket.OPEN) { 
+      const data = generateEnergyData(); 
+      ws.send(JSON.stringify(data)); 
+
+14 
+ 
+    } 
+  }, 2000); 
+   
+  ws.on('message', (message) => { 
+    console.log('Received:', message.toString()); 
+  }); 
+   
+  ws.on('close', () => { 
+    console.log('Client disconnected'); 
+    clearInterval(interval); 
+  }); 
+   
+  ws.on('error', (error) => { 
+    console.error('WebSocket error:', error); 
+    clearInterval(interval); 
+  }); 
+}); 
+ 
+5.4. Критерії оцінювання 
+Максимальна оцінка: 100 балів. Отримана оцінка за контрольний захід (максимум 100 
+балів)  переводиться  за  допомогою  відповідного  значення  «Вага  оцінки  в  загальному 
+семестровому  рейтингу  (див.  Силабус)»  в  «Значення  оцінки  за  контрольний  захід  в  складі 
+загально семестрового рейтингу» з точністю до 2-х значень після коми. 
+5.4.1. Проєктування (20 балів) 
+- Якість проєктної документації: 10 балів 
+- Обґрунтованість технічних рішень: 5 балів 
+- Макет інтерфейсу: 5 балів 
+5.4.2. Реалізація (50 балів) 
+- Підключення та робота з API: 15 балів 
+- Візуалізація даних (графіки, таблиці): 20 балів 
+- Оновлення в реальному часі: 10 балів 
+- Якість коду (структура, коментарі): 5 балів 
+5.4.3. Інтерфейс (15 балів) 
+- Зручність використання (UX): 7 балів 
+- Дизайн (UI): 5 балів 
+- Адаптивність (responsive): 3 бали 
+5.4.4. Звіт (15 балів) 
+- Повнота опису роботи: 7 балів 
+- Якість оформлення: 5 балів 
+- Аналіз результатів: 3 бали 
+5.5. Контрольні питання 
+1. Які переваги має WebSocket над REST API для передачі даних у реальному часі? 
+2. Як реалізувати автоматичне перепідключення при втраті зв'язку з сервером? 
+3. Які методи оптимізації можна застосувати для відображення великої кількості даних? 
+4. Як забезпечити коректну роботу застосунку на мобільних пристроях? 
+5. Які бібліотеки візуалізації найкращі для різних типів графіків? 
+6. Як реалізувати експорт даних у CSV або PDF формат? 
+7. Які методи можна використати для прогнозування даних на основі історії? 
+
+15 
+ 
+8. Як забезпечити безпеку при передачі даних між клієнтом і сервером? 
+9. Які підходи до тестування клієнтського коду існують? 
+10. Як реалізувати систему сповіщень про критичні події? 
+ 
+Список рекомендованої літератури 
+1.  Head  First  HTML  and  CSS:  A  Learner's  Guide  to  Creating  Standards-Based  Web  Pages. 
+O'Reilly Media. 2022. – 762 р. ISBN 978-0596159900. 
+2.  HTML,  CSS,  and  JavaScript  All  in  One:  Covering  HTML5,  CSS3,  and  ES6,  Sams  Teach 
+Yourself. Sams Publishing. 2021. – 800 р. ISBN 978-0672338083. 
+3. Head First. Програмування на JavaScript. Фабула. 2022. – 672 р. ISBN 978-617-522-047-
+4. 
+4. Head First. Python. Фабула. 2023. – 624 р. ISBN 978-617-522-019-1. 
+5. Head First PHP & MySQL. O'Reilly Media. 2023. – 812 р. ISBN 978-0596006303. 
+6. Duncan McGregor, Nat Pryce, Java to Kotlin: A Refactoring Guidebook, «O'Reilly Media», 
+2021. – 422 р. ISBN 978-1492082279 
+7. Nate Ebel, Mastering Kotlin: Learn advanced Kotlin programming techniques to build apps 
+for Android, iOS, and the web, «Packt Publishing», 2021. - 434 р. ISBN 978-1838555726. 
+8. Mozilla Developer Network. Електронний ресурс: https://developer.mozilla.org/en-US/ 
+9. W3Schools Online Web Tutorials. Електронний ресурс: https://www.w3schools.com/ 
+ресурс: https://docs.oracle.com/javase/tutorial/java/javaOO/objectcreation.html 
+10.   Електронний   ресурс:   http://www.oracle.com/technetwork/java/javase/8-whats-new-
+2157071.html 
+Перелік посилань 
+1. MDN    Web    Docs - Fetch    API [Електронний  ресурс]. - Режим  доступу:  
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API - Назва з екрана. 
+2. MDN    Web    Docs – WebSocket [Електронний  ресурс]. - Режим  доступу:  
+https://developer.mozilla.org/en-US/docs/Web/API/WebSocket - Назва з екрана. 
+3. Chart.js Documentation [Електронний    ресурс]. - Режим    доступу:  
+https://www.chartjs.org/docs/ - Назва з екрана. 
+4. Bootstrap Documentation [Електронний   ресурс]. - Режим   доступу:  
+https://getbootstrap.com/docs/ - Назва з екрана. 
+5. JavaScript.info - Network    requests [Електронний  ресурс]. - Режим  доступу:  
+https://javascript.info/network - Назва з екрана. 
+6. WebSocket tutorial [Електронний ресурс]. - Режим доступу:  https://www.websocket.org/ 
+- Назва з екрана. 
+7. D3.js gallery [Електронний     ресурс]. - Режим     доступу:  
+https://observablehq.com/@d3/gallery - Назва з екрана. 
+8. Visual Studio Code [Електронний    ресурс]. - Режим    доступу:  
+https://code.visualstudio.com/ - Назва з екрана. 
+9. Chrome DevTools [Електронний    ресурс]. - Режим    доступу:  
+https://developer.chrome.com/docs/devtools - Назва з екрана. 
+10. Postman  (для  тестування  API) [Електронний  ресурс]. - Режим  доступу:  
+https://www.postman.com/ - Назва з екрана. 
+
+16 
+ 
+11. WebSocket King (для тестування WebSocket) [Електронний ресурс]. - Режим доступу:  
+https://websocketking.com/ - Назва з екрана. 
+ 
+Додатки 
+Додаток А. Варіанти індивідуальних завдань 
+УВАГА!!! ВСІ ВАРІАНТИ ЗАВДАНЬ ВИГАДАНІ! БУДЬ-ЯКЕ СПІВПАДІННЯ – Є 
+ВИПАДКОВИМ ЗБІГОМ!!! 
+Варіант 1: Моніторинг сонячної електростанції 
+Об'єкт: Сонячна електростанція потужністю 1 МВт 
+Параметри для відображення: 
+- Поточна потужність генерації (кВт) 
+- Добова/місячна генерація (кВт·год) 
+- Ефективність панелей (%) 
+- Освітленість (Вт/м²) 
+- Температура панелей (°C) 
+Візуалізація: 
+- Лінійний графік потужності за 24 години 
+- Кругова діаграма розподілу генерації за годинами 
+- Таблиця історії вимірювань 
+- Карта heat-map ефективності панелей 
+ 
+Варіант 2: Вітрова електростанція 
+Об'єкт: Вітрова ферма з 10 турбінами 
+Параметри: 
+- Швидкість вітру (м/с) 
+- Загальна потужність (МВт) 
+- Потужність кожної турбіни 
+- Напрямок вітру 
+- Коефіцієнт використання встановленої потужності (КВВП) 
+Візуалізація: 
+- Стовпчаста діаграма потужності турбін 
+- Графік швидкості вітру 
+- Роза вітрів 
+- Gauge-індикатор КВВП 
+ 
+Варіант 3: Електрична підстанція 110/10 кВ 
+Об'єкт: Трансформаторна підстанція 
+Параметри: 
+- Напруга первинної обмотки (кВ) 
+- Напруга вторинної обмотки (кВ) 
+- Активна потужність (МВт) 
+- Реактивна потужність (МВАр) 
+- Коефіцієнт потужності (cos φ) 
+- Температура трансформатора (°C) 
+Візуалізація: 
+- Векторна діаграма потужностей 
+- Графік навантаження за добу 
+- Таблиця параметрів обох обмоток 
+І- ндикатор температури 
+
+17 
+ 
+ 
+Варіант 4: Система розумного будинку (Smart Home) 
+Об'єкт: Розумний будинок з контролем енергоспоживання 
+Параметри: 
+- Загальне споживання (кВт) 
+- Споживання по зонах (кухня, вітальня, спальні) 
+- Стан освітлення (увімк/вимк, яскравість) 
+- Температура в кімнатах 
+- Вартість електроенергії (грн) 
+Візуалізація: 
+- Кругова діаграма розподілу споживання 
+- Графік споживання в реальному часі 
+- План будинку з індикаторами 
+- Таблиця пристроїв та їх стану 
+ 
+Варіант 5: Гідроелектростанція 
+Об'єкт: Мала ГЕС на річці 
+Параметри: 
+- Рівень води у верхньому б'єфі (м) 
+- Витрата води (м³/с) 
+- Потужність генератора (МВт) 
+- Обертання турбіни (об/хв) 
+- Ефективність турбіни (%) 
+Візуалізація: 
+- Графік рівня води та потужності 
+- Індикатор обертання турбіни 
+- Таблиця параметрів роботи 
+- Діаграма ефективності 
+ 
+Варіант 6: Система акумулювання енергії (BESS) 
+Об'єкт: Battery Energy Storage System 
+Параметри: 
+- Рівень заряду (%) 
+- Потужність заряду/розряду (кВт) 
+- Напруга батареї (В) 
+- Струм (А) 
+- Температура батарейного блоку (°C) 
+- Кількість циклів заряду 
+Візуалізація: 
+- Прогрес-бар рівня заряду 
+- Графік потужності (позитивна - заряд, негативна - розряд) 
+- Таблиця параметрів батарей 
+- Індикатор температури 
+ 
+Варіант 7: Зарядна станція для електромобілів 
+Об'єкт: Швидка зарядна станція DC 
+Параметри: 
+- Статус підключених автомобілів 
+- Потужність кожного порту (кВт) 
+- Передана енергія (кВт·год) 
+- Час зарядки 
+- Вартість сесії (грн) 
+
+18 
+ 
+Візуалізація: 
+- Схема станції з індикаторами портів 
+- Графік навантаження по портах 
+- Таблиця активних сесій 
+- Статистика за добу 
+ 
+Варіант 8: Когенераційна установка (ТЕЦ) 
+Об'єкт: Мала ТЕЦ на природному газі 
+Параметри: 
+- Електрична потужність (МВт) 
+- Теплова потужність (Гкал/год) 
+- Витрата газу (м³/год) 
+- Температура теплоносія (°C) 
+- ККД електричний та тепловий (%) 
+Візуалізація: 
+- Sankey-діаграма потоків енергії 
+- Графіки електричної та теплової потужності 
+- Таблиця параметрів 
+- Індикатори ККД 
+ 
+Варіант 9: Диспетчерська система розподільчої мережі 
+Об'єкт: Диспетчерський центр енергомережі 
+Параметри: 
+- Навантаження по фідерах 
+- Втрати в лініях (%) 
+- Стан комутаційних апаратів 
+- Аварійні події 
+- Якість електроенергії (THD, cos φ) 
+Візуалізація: 
+- Однолінійна схема мережі 
+- Графіки навантаження фідерів 
+- Таблиця подій (event log) 
+- Карта якості електроенергії 
+ 
+Варіант 10: Система управління мікрогрідом 
+Об'єкт: Автономна мікромережа 
+Параметри: 
+- Генерація (сонце + вітер) (кВт) 
+- Навантаження (кВт) 
+- Стан батарей (%) 
+- Імпорт/експорт з основної мережі 
+- Баланс потужності 
+Візуалізація: 
+- Блок-схема балансу потужностей 
+- Графік генерації та споживання 
+- Стан батарейного накопичувача 
+- Таблиця режимів роботи 
+ 
+Варіант 11: Моніторинг якості електроенергії 
+Об'єкт: Пункт вимірювання якості електроенергії 
+Параметри: 
+- Відхилення напруги (%) 
+
+19 
+ 
+- Коефіцієнт несиметрії 
+- Коефіцієнт спотворення синусоїдальності (THD) 
+- Фліккер 
+- Частота (Гц) 
+Візуалізація: 
+- Графік форми сигналу напруги 
+- Спектральний аналіз гармонік 
+- Таблиця показників якості 
+- Індикатори відповідності нормам 
+ 
+Варіант 12: Система моніторингу споживання підприємства 
+Об'єкт: Промислове підприємство 
+Параметри: 
+- Загальне споживання (МВт) 
+- Споживання по цехах 
+- Пікове навантаження 
+- Коефіцієнт попиту 
+- Вартість електроенергії 
+Візуалізація: 
+- Кругова діаграма розподілу по цехах 
+- Графік добового профілю навантаження 
+- Таблиця споживання 
+- Прогноз витрат 
+ 
+Варіант 13: Геотермальна електростанція 
+Об'єкт: Геотермальна станція 
+Параметри: 
+- Температура геотермального флюїду (°C) 
+- Тиск пари (бар) 
+- Електрична потужність (МВт) 
+- Витрата теплоносія (кг/с) 
+- Ефективність циклу (%) 
+Візуалізація: 
+- T-S діаграма термодинамічного циклу 
+- Графік потужності 
+- Таблиця параметрів 
+- Схема станції 
+ 
+Варіант 14: Система освітлення вулиць (Smart Lighting) 
+Об'єкт: Розумна система вуличного освітлення міста 
+Параметри: 
+- Кількість активних ліхтарів 
+- Загальне споживання (кВт) 
+- Рівень освітленості (люкс) 
+- Стан ліхтарів (робочі/несправні) 
+- Економія енергії (%) 
+Візуалізація: 
+- Карта міста з ліхтарями 
+- Графік споживання за годинами 
+- Таблиця статусу ліхтарів 
+- Статистика економії 
+ 
+
+20 
+ 
+Варіант 15: Біогазова установка 
+Об'єкт: Біогазова електростанція 
+Параметри: 
+- Обсяг виробленого біогазу (м³/год) 
+- Вміст метану (%) 
+- Електрична потужність (кВт) 
+- Температура ферментера (°C) 
+- Завантаження субстрату (т/добу) 
+Візуалізація: 
+- Графік виробництва біогазу 
+- Кругова діаграма складу газу 
+- Таблиця параметрів ферментації 
+- Індикатор температури 
+ 
+Варіант 16: Система моніторингу кабельних ліній 
+Об'єкт: Високовольтні кабельні лінії 
+Параметри: 
+- Температура кабелю (°C) 
+- Навантаження лінії (А) 
+- Частичні розряди (пКл) 
+- Опір ізоляції (МОм) 
+- Стан охолодження 
+Візуалізація: 
+- Профіль температури по довжині кабелю 
+- Графік навантаження 
+- Таблиця діагностичних параметрів 
+- Теплова карта 
+ 
+Варіант 17: Інвертори сонячних панелей 
+Об'єкт: Моніторинг інверторів СЕС 
+Параметри: 
+- Вхідна потужність DC (кВт) 
+- Вихідна потужність AC (кВт) 
+- ККД інвертора (%) 
+- Напруга DC/AC 
+- Частота мережі (Гц) 
+- Візуалізація: 
+- Стовпчаста діаграма по інверторах 
+- Графік ККД 
+- Таблиця параметрів 
+- Індикатор якості AC 
+ 
+Варіант 18: SCADA система енергоблоку ТЕС 
+Об'єкт: Енергоблок теплової електростанції 
+Параметри: 
+- Потужність турбіни (МВт) 
+- Тиск пари (МПа) 
+- Температура перегрітої пари (°C) 
+- Розрідження в конденсаторі 
+- Вібрація підшипників 
+Візуалізація: 
+- Технологічна схема блоку 
+
+21 
+ 
+- Графіки основних параметрів 
+- Трендові діаграми 
+- Таблиця аварійних сигналів 
+ 
+Варіант 19: Система балансування навантаження ЦОД 
+Об'єкт: Центр обробки даних (Data Center) 
+Параметри: 
+- Споживання серверів (кВт) 
+- Споживання систем охолодження (кВт) 
+- PUE (Power Usage Effectiveness) 
+- Температура в серверних (°C) 
+- Завантаження ДБЖ (%) 
+Візуалізація: 
+- Sankey-діаграма розподілу енергії 
+- Графік PUE 
+- Карта температур стійок 
+- Таблиця стану обладнання 
+ 
+Варіант 20: Конденсаторна установка компенсації реактивної потужності 
+Об'єкт: Установка КРП 
+Параметри: 
+- Активна потужність (МВт) 
+- Реактивна потужність до/після компенсації (МВАр) 
+- Коефіцієнт потужності 
+- Кількість ввімкнених ступенів 
+- Напруга на конденсаторах 
+Візуалізація: 
+- Векторна діаграма потужностей 
+- Графік cos φ 
+- Схема ступенів компенсації 
+- Таблиця режимів 
+ 
+Варіант 21: Дизель-генераторна установка 
+Об'єкт: Резервна дизельна електростанція 
+Параметри: 
+- Потужність генератора (кВА) 
+- Обертання двигуна (об/хв) 
+- Температура двигуна (°C) 
+- Рівень палива (%) 
+- Напруга та частота 
+Візуалізація: 
+- Прилад панелі приладів 
+- Графіки параметрів двигуна 
+- Таблиця режимів роботи 
+- Індикатор палива 
+ 
+Варіант 22: Система контролю електролічильників 
+Об'єкт: АСКОЕ (автоматизована система комерційного обліку) 
+Параметри: 
+- Покази лічильників (кВт·год) 
+- Миттєве споживання 
+- Профіль навантаження 
+
+22 
+ 
+- Втрати в мережі 
+- Небаланси 
+Візуалізація: 
+- Таблиця споживачів 
+- Графік профілю навантаження 
+- Кругова діаграма втрат 
+- Карта небалансів 
+ 
+Варіант 23: Тепловий насос для опалення 
+Об'єкт: Геотермальний тепловий насос 
+Параметри: 
+- COP (коефіцієнт перетворення) 
+- Споживана електрична потужність (кВт) 
+- Теплова потужність (кВт) 
+- Температура грунту/повітря 
+- Температура теплоносія 
+Візуалізація: 
+- Графік COP 
+- Схема теплового балансу 
+- Таблиця температур 
+- Індикатор ефективності 
+ 
+Варіант 24: Моніторинг електротранспорту міста 
+Об'єкт: Система електротранспорту (трамваї, тролейбуси) 
+Параметри: 
+- Кількість транспорту на лінії 
+- Споживання по маршрутах 
+- Напруга контактної мережі 
+- Місцезнаходження транспорту 
+- Енергоефективність 
+Візуалізація: 
+- Карта з транспортом у реальному часі 
+- Графік споживання по маршрутах 
+- Таблиця стану транспорту 
+- Статистика за період 
+ 
+Варіант 25: Система рекуперації енергії ліфтів 
+Об'єкт: Енергоефективні ліфти з рекуперацією 
+Параметри: 
+- Споживання енергії (кВт) 
+- Віддана енергія в мережу (кВт) 
+- Кількість поїздок 
+- Ефективність рекуперації (%) 
+- Економія за період 
+Візуалізація: 
+- Графік споживання/віддачі 
+- Лічильник поїздок 
+- Кругова діаграма балансу 
+- Таблиця статистики 
+ 
+
+23 
+ 
+Варіант 26: Паливні комірки водневої електростанції 
+Об'єкт: Водневий генератор на паливних комірках 
+Параметри: 
+- Електрична потужність (кВт) 
+- Витрата водню (кг/год) 
+- Ефективність комірок (%) 
+- Температура стека (°C) 
+- Вологість мембран 
+Візуалізація: 
+- Графік потужності 
+- Схема потоків водню 
+- Таблиця параметрів комірок 
+- Індикатор ефективності 
+ 
+Варіант 27: Система моніторингу високовольтних вимикачів 
+Об'єкт: Елегазові вимикачі 110-330 кВ 
+Параметри: 
+- Кількість операцій 
+- Час спрацювання (мс) 
+- Тиск елегазу (МПа) 
+- Температура приводу (°C) 
+- Опір контактів (мОм) 
+Візуалізація: 
+- Графік часу спрацювання 
+- Індикатор тиску SF6 
+- Таблиця діагностики 
+- Лічильник операцій 
+ 
+Варіант 28: Енергоменеджмент промислового кластеру 
+Об'єкт: Промисловий парк з кількома підприємствами 
+Параметри: 
+- Споживання по підприємствах (МВт) 
+- Власна генерація (сонце + когенерація) 
+- Імпорт/експорт електроенергії 
+- Баланс потужності 
+- Вартість енергії по тарифах 
+Візуалізація: 
+- Sankey-діаграма потоків енергії 
+- Графік балансу кластеру 
+- Таблиця підприємств 
+- Розрахунок вартості 
+ 
+Варіант 29: Система динамічного ціноутворення Smart Grid 
+Об'єкт: Інтелектуальна мережа з динамічними тарифами 
+Параметри: 
+- Поточний тариф (грн/кВт·год) 
+- Прогноз тарифів на 24 години 
+- Споживання по зонах 
+- Пікове/непікове навантаження 
+- Потенціал зміщення навантаження 
+Візуалізація: 
+- Графік тарифів та споживання 
+
+24 
+ 
+- Кольорова карта часових зон 
+- Таблиця рекомендацій 
+- Розрахунок економії 
+ 
+Варіант 30: Цифровий двійник енергосистеми 
+Об'єкт: Віртуальна модель локальної енергосистеми 
+Параметри: 
+- Реальні дані з датчиків 
+- Розрахункові параметри моделі 
+- Відхилення моделі від реальності 
+- Прогнози на основі моделі 
+- Сценарії розвитку подій 
+Візуалізація: 
+- Паралельні графіки (реальність vs модель) 
+- 3D-візуалізація мережі 
+- Таблиця відхилень 
+- Прогнозні сценарії 
+ 
+ 
+Додаток Б: Додаткові бібліотеки для візуалізації 
+Б.1. Plotly.js - інтерактивні графіки 
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+const trace = { 
+  x: timestamps, 
+  y: powers, 
+  type: 'scatter', 
+  mode: 'lines+markers', 
+  name: 'Потужність' 
+}; 
+ 
+const layout = { 
+  title: 'Графік потужності', 
+  xaxis: { title: 'Час' }, 
+  yaxis: { title: 'Потужність (кВт)' } 
+}; 
+ 
+Plotly.newPlot('myDiv', [trace], layout); 
+ 
+Б.2. D3.js - складна візуалізація 
+<script src="https://d3js.org/d3.v7.min.js"></script> 
+// Приклад gauge-індикатора 
+const svg = d3.select("#gauge") 
+  .append("svg") 
+  .attr("width", 300) 
+  .attr("height", 300); 
+ 
+// Створення arc для gauge 
+const arc = d3.arc() 
+  .innerRadius(70) 
+  .outerRadius(100) 
+  .startAngle(0) 
+
+25 
+ 
+  .endAngle(Math.PI * (value / 100)); 
+ 
+svg.append("path") 
+  .attr("d", arc) 
+  .attr("transform", "translate(150, 150)") 
+  .attr("fill", "steelblue"); 
+ 
+Б.3. ApexCharts - сучасні графіки 
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
+const options = { 
+  series: [{ 
+    name: 'Потужність', 
+    data: [30, 40, 35, 50, 49, 60, 70, 91] 
+  }], 
+  chart: { 
+    height: 350, 
+    type: 'area', 
+    animations: { 
+      enabled: true, 
+      easing: 'linear', 
+      dynamicAnimation: { 
+        speed: 1000 
+      } 
+    } 
+  }, 
+  xaxis: { 
+    type: 'datetime' 
+  } 
+}; 
+ 
+const chart = new ApexCharts(document.querySelector("#chart"), options); 
+chart.render(); 
+ 
+Додаток В. Корисні поради 
+В.1. Обробка помилок API 
+async function fetchDataWithRetry(url, retries = 3) { 
+  for (let i = 0; i < retries; i++) { 
+    try { 
+      const response = await fetch(url); 
+      if (!response.ok) throw new Error(`HTTP ${response.status}`); 
+      return await response.json(); 
+    } catch (error) { 
+      console.error(`Attempt ${i + 1} failed:`, error); 
+      if (i === retries - 1) throw error; 
+      await new Promise(resolve => setTimeout(resolve, 1000 * (i + 1))); 
+    } 
+  } 
+} 
+ 
+В.2. Throttling для оновлень 
+function throttle(func, delay) { 
+
+26 
+ 
+  let lastCall = 0; 
+  return function(...args) { 
+    const now = Date.now(); 
+    if (now - lastCall >= delay) { 
+      lastCall = now; 
+      return func(...args); 
+    } 
+  }; 
+} 
+ 
+// Використання 
+const updateChart = throttle((data) => { 
+  chart.update(data); 
+}, 1000); // Оновлення не частіше ніж раз на секунду 
+ 
+В.3. Локальне зберігання історії 
+class DataStorage { 
+  constructor(maxSize = 100) { 
+    this.maxSize = maxSize; 
+    this.data = this.loadFromStorage() || []; 
+  } 
+   
+  add(item) { 
+    this.data.unshift(item); 
+    if (this.data.length > this.maxSize) { 
+      this.data = this.data.slice(0, this.maxSize); 
+    } 
+    this.saveToStorage(); 
+  } 
+   
+  getAll() { 
+    return this.data; 
+  } 
+   
+  saveToStorage() { 
+    try { 
+      localStorage.setItem('energyData', JSON.stringify(this.data)); 
+    } catch (e) { 
+      console.error('Storage error:', e); 
+    } 
+  } 
+   
+  loadFromStorage() { 
+    try { 
+      const stored = localStorage.getItem('energyData'); 
+      return stored ? JSON.parse(stored) : null; 
+    } catch (e) { 
+      console.error('Load error:', e); 
+      return null; 
+    } 
+  } 
+} 
+ 
+
+27 
+ 
+В.4. Форматування даних 
+// Форматування чисел 
+function formatNumber(num, decimals = 2) { 
+  return num.toFixed(decimals); 
+} 
+ 
+// Форматування часу 
+function formatTime(timestamp) { 
+  return new Date(timestamp).toLocaleTimeString('uk-UA'); 
+} 
+ 
+// Форматування дати 
+function formatDate(timestamp) { 
+  return new Date(timestamp).toLocaleDateString('uk-UA'); 
+} 
+ 
+// Форматування одиниць 
+function formatUnit(value, unit) { 
+  if (value >= 1000000) { 
+    return `${(value / 1000000).toFixed(2)} М${unit}`; 
+  } else if (value >= 1000) { 
+    return `${(value / 1000).toFixed(2)} к${unit}`; 
+  } 
+  return `${value.toFixed(2)} ${unit}`; 
+}

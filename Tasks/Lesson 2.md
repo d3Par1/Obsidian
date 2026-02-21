@@ -178,4 +178,269 @@ HEALTHY HABITS, BETTER ME
  Then compare with another student or group. Which of these habits is the hardest to keep, and why?
  2. Read the text and discuss: Why do you think BetterMe has become so popular around the world?
 BetterMe is a Ukrainian health and fitness app that has been developed since 2017. It has helped people create healthy
-routines in areas such as exercise, diet, men
+routines in areas such as exercise, diet, mental health and sleep. Unlike many apps, BetterMe has offered users personalised
+plans, so each person can follow advice that suits their lifestyle. It includes video workouts, meal ideas and even short
+meditations.
+The app has become popular worldwide and today it has reached more than 100 million downloads in 190 countries.
+BetterMe has also been recognised for supporting inclusivity by providing workouts for people with different body types and
+health conditions. The company’s mission is simple: to make a healthy lifestyle easier and more enjoyable for everyone.
+ 3. Match the beginnings and endings of these sentences.
+drink enough water _____
+eat vegetables and fruit _____
+do exercise _____
+sleep well _____
+spend less time on the phone _____
+1.BetterMe has been developed since ______
+2.The app has helped people with ______
+3.BetterMe has reached more than ______
+4.The company’s mission is ______
+a) exercise, diet, mental health and sleep.
+b) to make a healthy lifestyle easier and more enjoyable.
+c) 2017.
+d) 100 million downloads in 190 countries.
+Licence issued for personal use, 131782, Daria Shchipachova
+
+Try to get at least seven hours of sleep every night.
+Add fresh fruit or vegetables to your lunch and dinner.
+If your journey is short, walk or cycle rather than drive.
+After an hour at your desk, stand up and stretch.
+Spend part of your day outdoors, even if it’s only a short walk.
+Make sure you drink enough water.
+Switch off screens at least 30 minutes before going to bed.
+When you feel stressed, talk to someone you trust instead of keeping it inside.
+WORSEME vs BETTERME
+Work in pairs or small groups. Imagine you are “WorseMe,” a health app that gives terrible advice.
+Below you see eight health tips from BetterMe. Create the opposite “WorseMe” advice for each tip.
+Then compare your ideas with another group or person.
+Licence issued for personal use, 131782, Daria Shchipachova
+
+A Ukrainian Connection
+ 1. Work in pairs or small groups. Look at the situations below. Decide: Would you text, call, video chat, or meet face-to-face? 
+  Be ready to explain your choice.
+ 2. Read the text and discuss: What do you think are the biggest advantages of using an app like WhatsApp?
+ 3. Put these events in the correct order according to the text.
+You are late for meeting a friend.
+You want to tell your mum you love her.
+You have to explain homework to a classmate.
+You want to send a funny photo to a group of friends.
+You are angry with someone.
+       Which way of communicating do you usually use the most? Why?
+WhatsApp is one of the most popular communication apps in the world. It has allowed people to send free text messages, make voice and video calls, and
+share photos, videos and documents. Today, more than two billion people in over 180 countries use it every month.
+The app was co-founded in 2009 by Jan Koum, who was born in Ukraine and later moved to the United States. He grew up in a poor family, and his experiences
+have inspired him to make communication simple and affordable for everyone. His idea was simple: to create an easy, free and private way to stay in touch
+with family and friends. WhatsApp has quickly become popular because it works on almost every type of phone and only needs an internet connection.
+In 2014, Facebook bought WhatsApp, but the app has stayed independent and has continued to grow. It has changed the way people communicate and has
+made the world feel much smaller.
+a) Facebook bought WhatsApp. _____
+b) Jan Koum co-founded WhatsApp. _____
+c) More than two billion people have used WhatsApp each month. _____
+d) WhatsApp has become popular around the world. _____
+Licence issued for personal use, 131782, Daria Shchipachova
+
+WhatsApp in the Past
+ Scenario 1: A king or queen and their servant.
+It’s the year 1920. A king/queen is sending WhatsApp messages to their servant. They
+want food, clothes, and entertainment — but the servant is very slow and keeps making
+mistakes.
+hey u, bring me dinner asap 
+sry majesty  thought u said
+dessert not dinner lol
+Work in pairs. Imagine WhatsApp existed 100 years ago. Choose one of the scenarios and act out a short 
+WhatsApp-style conversation. Be funny and creative!
+Licence issued for personal use, 131782, Daria Shchipachova
+
+WhatsApp in the Past
+Work in pairs. Imagine WhatsApp existed 100 years ago. Choose one of the scenarios and act out a short 
+WhatsApp-style conversation. Be funny and creative!
+Scenario 2: A 1920s couple arranging a date.
+Two people in the 1920s are trying to arrange a date using WhatsApp. There are no cars,
+so they have to meet somewhere close. One of them is late and keeps sending excuses.
+hey, where r u? 
+on my way, but the rain has
+ruined my hair
+Licence issued for personal use, 131782, Daria Shchipachova
+
+WhatsApp in the Past
+Work in pairs. Imagine WhatsApp existed 100 years ago. Choose one of the scenarios and act out a short 
+WhatsApp-style conversation. Be funny and creative!
+Scenario 3: A shopkeeper and a customer.
+In 1910, a local shopkeeper is trying to sell bread and milk through WhatsApp messages.
+The customer is confused and keeps asking strange questions.
+Fresh bread has just
+arrived, do u want some?
+Wait... Is it gluten free?
+Licence issued for personal use, 131782, Daria Shchipachova
+
+Which app would you recommend to a
+friend from another country, and how
+would you convince them to try it?
+If you could add one new feature to
+any of the apps, what would it be?
+Discuss the questions in pairs or small groups.
+Do you think technology like these
+apps makes life easier or more
+stressful? Give examples.
+If you could only keep one of these
+four apps, which one would you
+choose and why?
+Which app do you think has had the
+biggest impact on people’s lives?
+Let’s Discuss 
+Licence issued for personal use, 131782, Daria Shchipachova
+
+Work in pairs or small groups. You are investors with $100,000. Look at the companies on the card. 
+You can give money to one, two or more companies — but not to all. Decide how much you will give and say why.
+THE $100,000 CHALLENGE
+Used by 2 billion people
+worldwide.
+Very strong reputation
+and trusted brand.
+WhatsApp 
+Reface Diia
+Ukrainian app for digital
+documents & services.
+Seen as one of the most
+advanced e-government
+apps.
+Zoho Meeting 
+Cheaper than Zoom for
+companies.
+Gaining new users
+during remote work
+boom.
+Over 100 million
+downloads.
+Popular with young users
+on TikTok & Instagram.
+$60,000
+$30,000
+$50,000
+$10,000
+Licence issued for personal use, 131782, Daria Shchipachova
+
+Prometheus
+THE $100,000 CHALLENGE
+Helps people correct
+grammar, spelling and
+style.
+Used by over 30 million
+daily users worldwide.
+Grammarly
+PreplyEdEra
+Ukrainian platform for
+online courses and
+textbooks.
+Works with schools,
+universities and teachers.
+Ukrainian platform for
+free online courses.
+Millions of learners,
+partners with top
+universities.
+Online platform to
+learn languages with
+tutors.
+Thousands of teachers,
+used in 180+ countries.
+$40,000
+$30,000
+$15,000
+$10,000
+Work in pairs or small groups. You are investors with $100,000. Look at the companies on the card. 
+You can give money to one, two or more companies — but not to all. Decide how much you will give and say why.
+Licence issued for personal use, 131782, Daria Shchipachova
+
+MacPaw
+THE $100,000 CHALLENGE
+Ukrainian app for fitness,
+diet and mental health.
+Over 100 million
+downloads in 190
+countries.
+BetterMe
+Petcube Headway
+Ukrainian app with book
+summaries and learning
+tools.
+Millions of users
+worldwide, growing fast.
+Ukrainian company
+making apps for Mac.
+Millions of users
+worldwide, known for
+design & quality.
+Smart camera to watch
+and play with pets.
+Sold in 18+ countries,
+popular in the US.
+$35,000
+$25,000
+$20,000
+$35,000
+Work in pairs or small groups. You are investors with $100,000. Look at the companies on the card. 
+You can give money to one, two or more companies — but not to all. Decide how much you will give and say why.
+Licence issued for personal use, 131782, Daria Shchipachova
+
+Let's play
+Test your knowledge of Ukraine’s most
+creative apps — Grammarly, Petcube,
+BetterMe, and WhatsApp. Answer
+fact-based questions, choose from
+four options (A, B, C, D), and climb
+the money ladder step by step.
+Licence issued for personal use, 131782, Daria Shchipachova
+
+Extra task
+Imagine you’ve just used one of the apps we have studied.
+Write a short App Store-style or Play Market-style review.
+      Include:
+A star rating out of 5.
+A short introduction explaining why you have chosen/downloaded the app.
+2–3 sentences about the best parts you have noticed while using it.
+Write 1 sentence about something that has surprised you.
+End with a recommendation: Would you keep using it? Who should try it?
+Licence issued for personal use, 131782, Daria Shchipachova
+
+GrammarlyPetcube
+BetterMeWhatsApp
+WhatsappGrammarly
+GrammarlyBetterMe
+Extra task
+Look at the pairs of apps below.
+Each pair has already been mixed together — now it’s your job to imagine what the new app would do.
++
++
++
++
+=
+=
+=
+=
+Example:
+Grammarly + WhatsApp → ChatSmart: An app that fixes your grammar while you’re chatting with friends.
+Licence issued for personal use, 131782, Daria Shchipachova
+
+Extra task
+Look at each picture. Write a short sentence using the information from this lesson.
+Licence issued for personal use, 131782, Daria Shchipachova
+
+Extra task
+Complete the sentences with your own ideas.
+1. The most useful app we have studied is
+2. Petcube has been created to
+3. If my pet could use Petcube, it would 
+4. I have never thought an app could 
+5. Grammarly has made writing 
+6. Without Grammarly, many people would
+7. BetterMe has encouraged people to
+8. The strangest health advice I can imagine from WorseMe is
+10. If WhatsApp disappeared tomorrow, people would
+11. I have learnt that Ukrainian apps
+12. I didn’t know before that Ukrainians have
+9. WhatsApp has made communication
+Licence issued for personal use, 131782, Daria Shchipachova
+
+Thank 
+you!
+Licence issued for personal use, 131782, Daria Shchipachova
