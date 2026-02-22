@@ -165,7 +165,7 @@ const elements = document.querySelectorAll('.myClass');
 javascript: 
 // Зміна текстового вмісту 
 element.textContent = 'Новий текст'; 
-element.innerHTML = '<strong>HTML вміст</strong>'; 
+element.innerHTML = '&lt;strong>HTML вміст&lt;/strong>'; 
  
 // Зміна атрибутів 
 element.setAttribute('class', 'active'); 
@@ -266,12 +266,12 @@ function formatDateTime() {
 6. Протестувати роботу сторінки 
 2.2.2. Виконання 
 2.2.2.1. Файл index.html 
-<!DOCTYPE html> 
-<html lang="uk"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <title>Сонячна електростанція - Моніторинг</title> 
-    <style> 
+&lt;!DOCTYPE html> 
+&lt;html lang="uk"> 
+&lt;head> 
+    &lt;meta charset="UTF-8"> 
+    &lt;title>Сонячна електростанція - Моніторинг&lt;/title> 
+    &lt;style> 
         * { margin: 0; padding: 0; box-sizing: border-box; } 
         body { 
             font-family: 'Segoe UI', sans-serif; 
@@ -335,61 +335,61 @@ function formatDateTime() {
         .status-normal { color: #2ecc71; } 
         .status-warning { color: #f39c12; } 
         .status-danger { color: #e74c3c; } 
-    </style> 
-</head> 
-<body> 
-    <div class="container"> 
-        <header> 
-            <h1>☀️ Сонячна електростанція</h1> 
-            <p>Останнє оновлення: <span id="lastUpdate">--:--:--</span></p> 
-        </header> 
+    &lt;/style> 
+&lt;/head> 
+&lt;body> 
+    &lt;div class="container"> 
+        &lt;header> 
+            &lt;h1>☀️ Сонячна електростанція&lt;/h1> 
+            &lt;p>Останнє оновлення: &lt;span id="lastUpdate">--:--:--&lt;/span>&lt;/p> 
+        &lt;/header> 
  
-        <div class="controls"> 
+        &lt;div class="controls"> 
 
 8 
  
-            <button id="updateBtn" class="btn btn-primary"> Оновити</button> 
-            <button id="autoUpdateBtn" class="btn btn-success">▶️ Автооновлення</button> 
-            <span id="autoStatus">Вимкнено</span> 
-        </div> 
+            &lt;button id="updateBtn" class="btn btn-primary"> Оновити&lt;/button> 
+            &lt;button id="autoUpdateBtn" class="btn btn-success">▶️ Автооновлення&lt;/button> 
+            &lt;span id="autoStatus">Вимкнено&lt;/span> 
+        &lt;/div> 
  
-        <div class="dashboard"> 
-            <div class="card"> 
-                <h3>Сонячна радіація</h3> 
-                <div class="value"> 
-                    <span id="param0" class="big-number">0</span> 
-                    <span class="unit">Вт/м²</span> 
-                </div> 
-                <div id="status0" class="status-indicator">●</div> 
-            </div> 
-            <div class="card"> 
-                <h3>Вироблена потужність</h3> 
-                <div class="value"> 
-                    <span id="param1" class="big-number">0</span> 
-                    <span class="unit">кВт</span> 
-                </div> 
-                <div id="status1" class="status-indicator">●</div> 
-            </div> 
-            <div class="card"> 
-                <h3>Напруга DC</h3> 
-                <div class="value"> 
-                    <span id="param2" class="big-number">0</span> 
-                    <span class="unit">В</span> 
-                </div> 
-                <div id="status2" class="status-indicator">●</div> 
-            </div> 
-            <div class="card"> 
-                <h3>Температура панелей</h3> 
-                <div class="value"> 
-                    <span id="param3" class="big-number">0</span> 
-                    <span class="unit">°C</span> 
-                </div> 
-                <div id="status3" class="status-indicator">●</div> 
-            </div> 
-        </div> 
-    </div> 
+        &lt;div class="dashboard"> 
+            &lt;div class="card"> 
+                &lt;h3>Сонячна радіація&lt;/h3> 
+                &lt;div class="value"> 
+                    &lt;span id="param0" class="big-number">0&lt;/span> 
+                    &lt;span class="unit">Вт/м²&lt;/span> 
+                &lt;/div> 
+                &lt;div id="status0" class="status-indicator">●&lt;/div> 
+            &lt;/div> 
+            &lt;div class="card"> 
+                &lt;h3>Вироблена потужність&lt;/h3> 
+                &lt;div class="value"> 
+                    &lt;span id="param1" class="big-number">0&lt;/span> 
+                    &lt;span class="unit">кВт&lt;/span> 
+                &lt;/div> 
+                &lt;div id="status1" class="status-indicator">●&lt;/div> 
+            &lt;/div> 
+            &lt;div class="card"> 
+                &lt;h3>Напруга DC&lt;/h3> 
+                &lt;div class="value"> 
+                    &lt;span id="param2" class="big-number">0&lt;/span> 
+                    &lt;span class="unit">В&lt;/span> 
+                &lt;/div> 
+                &lt;div id="status2" class="status-indicator">●&lt;/div> 
+            &lt;/div> 
+            &lt;div class="card"> 
+                &lt;h3>Температура панелей&lt;/h3> 
+                &lt;div class="value"> 
+                    &lt;span id="param3" class="big-number">0&lt;/span> 
+                    &lt;span class="unit">°C&lt;/span> 
+                &lt;/div> 
+                &lt;div id="status3" class="status-indicator">●&lt;/div> 
+            &lt;/div> 
+        &lt;/div> 
+    &lt;/div> 
  
-    <script> 
+    &lt;script> 
         let autoInterval = null; 
         let isAutoEnabled = false; 
  
@@ -497,9 +497,9 @@ function formatDateTime() {
             document.getElementById('updateBtn').addEventListener('click', updateAll); 
             document.getElementById('autoUpdateBtn').addEventListener('click', toggleAuto); 
         }); 
-    </script> 
-</body> 
-</html> 
+    &lt;/script> 
+&lt;/body> 
+&lt;/html> 
  
 Результат роботи програми наведено  на рис.2.1. 
  
@@ -591,13 +591,13 @@ PWA (Progressive Web App)
  
 2.2.4. Приклад розширеної реалізації з графіками 
 html: 
-<!DOCTYPE html> 
-<html lang="uk"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <title>Розширений моніторинг</title> 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
-    <style> 
+&lt;!DOCTYPE html> 
+&lt;html lang="uk"> 
+&lt;head> 
+    &lt;meta charset="UTF-8"> 
+    &lt;title>Розширений моніторинг&lt;/title> 
+    &lt;script src="https://cdn.jsdelivr.net/npm/chart.js">&lt;/script> 
+    &lt;style> 
         .chart-container { 
             position: relative; 
             height: 300px; 
@@ -606,14 +606,14 @@ html:
 14 
  
         } 
-    </style> 
-</head> 
-<body> 
-    <div class="chart-container"> 
-        <canvas id="powerChart"></canvas> 
-    </div> 
+    &lt;/style> 
+&lt;/head> 
+&lt;body> 
+    &lt;div class="chart-container"> 
+        &lt;canvas id="powerChart">&lt;/canvas> 
+    &lt;/div> 
      
-    <script> 
+    &lt;script> 
         // Історія даних 
         const history = { 
             labels: [], 
@@ -664,9 +664,9 @@ html:
             const power = (Math.random() * 30 + 20).toFixed(2); 
             updateChart(time, parseFloat(power)); 
         }, 3000); 
-    </script> 
-</body> 
-</html> 
+    &lt;/script> 
+&lt;/body> 
+&lt;/html> 
  
 2.2.5. Приклад сучасного UI з використанням CSS 
 css: 

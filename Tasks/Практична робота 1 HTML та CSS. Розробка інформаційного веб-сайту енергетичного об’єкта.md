@@ -156,42 +156,42 @@ CSS. Розробка інформаційного веб-сайту енерг�
 1.1.1. Основи HTML5 
 HTML (HyperText Markup Language) – це мова розмітки для створення веб-сторінок. 
 Базова структура HTML-документа 
-<!DOCTYPE html> 
+&lt;!DOCTYPE html> 
 
 4 
  
-<html lang="uk"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Назва сторінки</title> 
-    <link rel="stylesheet" href="styles.css"> 
-</head> 
-<body> 
-    <!-- Контент сторінки --> 
-</body> 
-</html> 
+&lt;html lang="uk"> 
+&lt;head> 
+    &lt;meta charset="UTF-8"> 
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    &lt;title>Назва сторінки&lt;/title> 
+    &lt;link rel="stylesheet" href="styles.css"> 
+&lt;/head> 
+&lt;body> 
+    &lt;!-- Контент сторінки --> 
+&lt;/body> 
+&lt;/html> 
  
 1.1.1.2. Основні теги для проекту: 
-- <header> - заголовок сторінки 
-- <nav> - навігаційне меню 
-- <main> - основний контент 
-- <section> - логічний розділ 
-- <article> - самостійний контент 
-- <aside> - додатковий контент 
-- <footer> - підвал сторінки 
-- <h1>-<h6> - заголовки 
-- <p> - параграф 
-- <table> - таблиця 
-- <img> - зображення 
-- <a> - посилання 
-- <div> - контейнер 
-- <span> - вбудований контейнер 
+- &lt;header> - заголовок сторінки 
+- &lt;nav> - навігаційне меню 
+- &lt;main> - основний контент 
+- &lt;section> - логічний розділ 
+- &lt;article> - самостійний контент 
+- &lt;aside> - додатковий контент 
+- &lt;footer> - підвал сторінки 
+- &lt;h1>-&lt;h6> - заголовки 
+- &lt;p> - параграф 
+- &lt;table> - таблиця 
+- &lt;img> - зображення 
+- &lt;a> - посилання 
+- &lt;div> - контейнер 
+- &lt;span> - вбудований контейнер 
 1.1.2. Основи CSS3 
 CSS (Cascading Style Sheets) – це мова стилів для оформлення HTML. 
 1.1.2.1. Способи підключення CSS 
-1. Зовнішній файл: <link rel="stylesheet" href="style.css"> 
-2. Внутрішні стилі: <style>...</style> в <head> 
+1. Зовнішній файл: &lt;link rel="stylesheet" href="style.css"> 
+2. Внутрішні стилі: &lt;style>...&lt;/style> в &lt;head> 
 3. Вбудовані стилі: style="color: red;" 
 1.1.2.2. Селектори 
 - .class - клас 
@@ -220,7 +220,7 @@ gap: 20px;
 1.1.3. Bootstrap 5 
 Bootstrap – це CSS-фреймворк для швидкої розробки. 
 1.1.3.1. Підключення 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
 rel="stylesheet"> 
 1.1.3.2. Сіткова система (Grid System) 
 - .container / .container-fluid 
@@ -278,176 +278,176 @@ rel="stylesheet">
 • Додайте розділ з історією будівництва та модернізацій 
 1.2.2. Виконання 
 1.2.2.1. Файл index.html 
-<!DOCTYPE html> 
-<html lang="uk"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Трансформаторна підстанція 110/35/10 кВ</title> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+&lt;!DOCTYPE html> 
+&lt;html lang="uk"> 
+&lt;head> 
+    &lt;meta charset="UTF-8"> 
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    &lt;title>Трансформаторна підстанція 110/35/10 кВ&lt;/title> 
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
 rel="stylesheet"> 
-    <link rel="stylesheet" href="styles.css"> 
-</head> 
-<body> 
-    <!-- Навігація --> 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary"> 
-        <div class="container"> 
-            <a class="navbar-brand" href="#">⚡ ЕнергоПортал</a> 
-            <button    class="navbar-toggler"    type="button"    data-bs-toggle="collapse"    data-bs-
+    &lt;link rel="stylesheet" href="styles.css"> 
+&lt;/head> 
+&lt;body> 
+    &lt;!-- Навігація --> 
+    &lt;nav class="navbar navbar-expand-lg navbar-dark bg-primary"> 
+        &lt;div class="container"> 
+            &lt;a class="navbar-brand" href="#">⚡ ЕнергоПортал&lt;/a> 
+            &lt;button    class="navbar-toggler"    type="button"    data-bs-toggle="collapse"    data-bs-
 target="#navbarNav"> 
 
 7 
  
-                <span class="navbar-toggler-icon"></span> 
-            </button> 
-            <div class="collapse navbar-collapse" id="navbarNav"> 
-                <ul class="navbar-nav ms-auto"> 
-                    <li class="nav-item"><a class="nav-link    active"    href="#about">Про 
-об'єкт</a></li> 
-                    <li class="nav-item"><a class="nav-link" href="#params">Параметри</a></li> 
-                    <li class="nav-item"><a class="nav-link" href="#scheme">Схема</a></li> 
-                    <li class="nav-item"><a class="nav-link" href="#contacts">Контакти</a></li> 
-                </ul> 
-            </div> 
-        </div> 
-    </nav> 
+                &lt;span class="navbar-toggler-icon">&lt;/span> 
+            &lt;/button> 
+            &lt;div class="collapse navbar-collapse" id="navbarNav"> 
+                &lt;ul class="navbar-nav ms-auto"> 
+                    &lt;li class="nav-item">&lt;a class="nav-link    active"    href="#about">Про 
+об'єкт&lt;/a>&lt;/li> 
+                    &lt;li class="nav-item">&lt;a class="nav-link" href="#params">Параметри&lt;/a>&lt;/li> 
+                    &lt;li class="nav-item">&lt;a class="nav-link" href="#scheme">Схема&lt;/a>&lt;/li> 
+                    &lt;li class="nav-item">&lt;a class="nav-link" href="#contacts">Контакти&lt;/a>&lt;/li> 
+                &lt;/ul> 
+            &lt;/div> 
+        &lt;/div> 
+    &lt;/nav> 
  
-    <!-- Заголовок --> 
-    <header class="hero-section text-white text-center py-5"> 
-        <div class="container"> 
-            <h1 class="display-4 fw-bold">Трансформаторна підстанція 110/35/10 кВ</h1> 
-            <p class="lead">Забезпечення надійного електропостачання міста Києва</p> 
-        </div> 
-    </header> 
+    &lt;!-- Заголовок --> 
+    &lt;header class="hero-section text-white text-center py-5"> 
+        &lt;div class="container"> 
+            &lt;h1 class="display-4 fw-bold">Трансформаторна підстанція 110/35/10 кВ&lt;/h1> 
+            &lt;p class="lead">Забезпечення надійного електропостачання міста Києва&lt;/p> 
+        &lt;/div> 
+    &lt;/header> 
  
-    <!-- Основний контент --> 
-    <main class="container my-5"> 
-        <!-- Опис об'єкта --> 
-        <section id="about" class="mb-5"> 
-            <div class="row"> 
-                <div class="col-lg-8"> 
-                    <h2 class="section-title mb-4">Про об'єкт</h2> 
-                    <p class="text-justify"> 
+    &lt;!-- Основний контент --> 
+    &lt;main class="container my-5"> 
+        &lt;!-- Опис об'єкта --> 
+        &lt;section id="about" class="mb-5"> 
+            &lt;div class="row"> 
+                &lt;div class="col-lg-8"> 
+                    &lt;h2 class="section-title mb-4">Про об'єкт&lt;/h2> 
+                    &lt;p class="text-justify"> 
                         Трансформаторна підстанція 110/35/10 кВ є важливим елементом  
                         енергосистеми столиці. Підстанція введена в експлуатацію у 2015 році  
                         та призначена для приймання електричної енергії від мережі 110 кВ,  
                         перетворення її на напругу 35 кВ та 10 кВ і розподілу електроенергії  
                         між споживачами промислового та житлового секторів. 
-                    </p> 
-                    <p class="text-justify"> 
+                    &lt;/p> 
+                    &lt;p class="text-justify"> 
                         На підстанції встановлено три трансформатори загальною потужністю  
                         63  МВА  з  системою  автоматичного  регулювання  напруги.  Об'єкт 
 обладнано  
                         сучасними   системами   захисту,   автоматики   та   телемеханіки,   що 
 забезпечують  
                         безперебійну та безпечну роботу. 
-                    </p> 
-                </div> 
+                    &lt;/p> 
+                &lt;/div> 
 
 8 
  
-                <div class="col-lg-4"> 
-                    <img src="https://via.placeholder.com/400x300"  
+                &lt;div class="col-lg-4"> 
+                    &lt;img src="https://via.placeholder.com/400x300"  
                          alt="Трансформаторна підстанція"  
                          class="img-fluid rounded shadow"> 
-                </div> 
-            </div> 
-        </section> 
+                &lt;/div> 
+            &lt;/div> 
+        &lt;/section> 
  
-        <!-- Таблиця параметрів --> 
-        <section id="params" class="mb-5"> 
-            <h2 class="section-title mb-4">Технічні параметри</h2> 
-            <div class="table-responsive"> 
-                <table class="table table-striped table-hover"> 
-                    <thead class="table-dark"> 
-                        <tr> 
-                            <th>Параметр</th> 
-                            <th>Значення</th> 
-                            <th>Одиниці виміру</th> 
-                        </tr> 
-                    </thead> 
-                    <tbody> 
-                        <tr> 
-                            <td>Номінальна потужність</td> 
-                            <td>63</td> 
-                            <td>МВА</td> 
-                        </tr> 
-                        <tr> 
-                            <td>Напруга ВН</td> 
-                            <td>110</td> 
-                            <td>кВ</td> 
-                        </tr> 
-                        <tr> 
-                            <td>Напруга СН</td> 
-                            <td>35</td> 
-                            <td>кВ</td> 
-                        </tr> 
-                        <tr> 
-                            <td>Напруга НН</td> 
-                            <td>10</td> 
-                            <td>кВ</td> 
-                        </tr> 
-                        <tr> 
-                            <td>Кількість трансформаторів</td> 
-                            <td>3</td> 
-                            <td>шт</td> 
+        &lt;!-- Таблиця параметрів --> 
+        &lt;section id="params" class="mb-5"> 
+            &lt;h2 class="section-title mb-4">Технічні параметри&lt;/h2> 
+            &lt;div class="table-responsive"> 
+                &lt;table class="table table-striped table-hover"> 
+                    &lt;thead class="table-dark"> 
+                        &lt;tr> 
+                            &lt;th>Параметр&lt;/th> 
+                            &lt;th>Значення&lt;/th> 
+                            &lt;th>Одиниці виміру&lt;/th> 
+                        &lt;/tr> 
+                    &lt;/thead> 
+                    &lt;tbody> 
+                        &lt;tr> 
+                            &lt;td>Номінальна потужність&lt;/td> 
+                            &lt;td>63&lt;/td> 
+                            &lt;td>МВА&lt;/td> 
+                        &lt;/tr> 
+                        &lt;tr> 
+                            &lt;td>Напруга ВН&lt;/td> 
+                            &lt;td>110&lt;/td> 
+                            &lt;td>кВ&lt;/td> 
+                        &lt;/tr> 
+                        &lt;tr> 
+                            &lt;td>Напруга СН&lt;/td> 
+                            &lt;td>35&lt;/td> 
+                            &lt;td>кВ&lt;/td> 
+                        &lt;/tr> 
+                        &lt;tr> 
+                            &lt;td>Напруга НН&lt;/td> 
+                            &lt;td>10&lt;/td> 
+                            &lt;td>кВ&lt;/td> 
+                        &lt;/tr> 
+                        &lt;tr> 
+                            &lt;td>Кількість трансформаторів&lt;/td> 
+                            &lt;td>3&lt;/td> 
+                            &lt;td>шт&lt;/td> 
 
 9 
  
-                        </tr> 
-                        <tr> 
-                            <td>Рік введення в експлуатацію</td> 
-                            <td>2015</td> 
-                            <td>рік</td> 
-                        </tr> 
-                        <tr> 
-                            <td>Тип комутаційних апаратів</td> 
-                            <td>Елегазові вимикачі</td> 
-                            <td>-</td> 
-                        </tr> 
-                    </tbody> 
-                </table> 
-            </div> 
-        </section> 
+                        &lt;/tr> 
+                        &lt;tr> 
+                            &lt;td>Рік введення в експлуатацію&lt;/td> 
+                            &lt;td>2015&lt;/td> 
+                            &lt;td>рік&lt;/td> 
+                        &lt;/tr> 
+                        &lt;tr> 
+                            &lt;td>Тип комутаційних апаратів&lt;/td> 
+                            &lt;td>Елегазові вимикачі&lt;/td> 
+                            &lt;td>-&lt;/td> 
+                        &lt;/tr> 
+                    &lt;/tbody> 
+                &lt;/table> 
+            &lt;/div> 
+        &lt;/section> 
  
-        <!-- Схема --> 
-        <section id="scheme" class="mb-5"> 
-            <h2 class="section-title mb-4">Однолінійна схема</h2> 
-            <div class="text-center"> 
-                <img src="https://loremflickr.com/800/400/energy,power"  
+        &lt;!-- Схема --> 
+        &lt;section id="scheme" class="mb-5"> 
+            &lt;h2 class="section-title mb-4">Однолінійна схема&lt;/h2> 
+            &lt;div class="text-center"> 
+                &lt;img src="https://loremflickr.com/800/400/energy,power"  
                      alt="Однолінійна схема підстанції"  
                      class="img-fluid rounded shadow"> 
-            </div> 
-        </section> 
+            &lt;/div> 
+        &lt;/section> 
  
-        <!-- Контакти --> 
-        <section id="contacts" class="mb-5"> 
-            <h2 class="section-title mb-4">Контактна інформація</h2> 
-            <div class="card"> 
-                <div class="card-body"> 
-                    <p><strong>Адреса:</strong> м. Київ, вул. Енергетична, 15</p> 
-                    <p><strong>Телефон:</strong> +380 (44) 123-45-67</p> 
-                    <p><strong>Email:</strong> ps110@energy.kiev.ua</p> 
-                    <p><strong>Режим роботи:</strong> цілодобово, без вихідних</p> 
-                </div> 
-            </div> 
-        </section> 
-    </main> 
+        &lt;!-- Контакти --> 
+        &lt;section id="contacts" class="mb-5"> 
+            &lt;h2 class="section-title mb-4">Контактна інформація&lt;/h2> 
+            &lt;div class="card"> 
+                &lt;div class="card-body"> 
+                    &lt;p>&lt;strong>Адреса:&lt;/strong> м. Київ, вул. Енергетична, 15&lt;/p> 
+                    &lt;p>&lt;strong>Телефон:&lt;/strong> +380 (44) 123-45-67&lt;/p> 
+                    &lt;p>&lt;strong>Email:&lt;/strong> ps110@energy.kiev.ua&lt;/p> 
+                    &lt;p>&lt;strong>Режим роботи:&lt;/strong> цілодобово, без вихідних&lt;/p> 
+                &lt;/div> 
+            &lt;/div> 
+        &lt;/section> 
+    &lt;/main> 
  
-    <!-- Нижній колонтитул --> 
-    <footer class="bg-dark text-white text-center py-4"> 
-        <div class="container"> 
-            <p>&copy; 2025 Енергетичний портал. Всі права захищені.</p> 
-        </div> 
+    &lt;!-- Нижній колонтитул --> 
+    &lt;footer class="bg-dark text-white text-center py-4"> 
+        &lt;div class="container"> 
+            &lt;p>&copy; 2025 Енергетичний портал. Всі права захищені.&lt;/p> 
+        &lt;/div> 
 
 10 
  
-    </footer> 
+    &lt;/footer> 
  
-    <script 
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
-</body> 
-</html> 
+    &lt;script 
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">&lt;/script> 
+&lt;/body> 
+&lt;/html> 
 1.2.2.2. Файл styles.css 
 /* styles.css */ 
  
@@ -636,8 +636,8 @@ footer {
 Проєктування односторінкового сайту 
 Основні вимоги до проєкту: 
 1. Заголовок і підзаголовок 
-- Використовувати тег `<h1>` для основного заголовка 
-- Підзаголовок у тегу `<p>` з класом `lead` 
+- Використовувати тег `&lt;h1>` для основного заголовка 
+- Підзаголовок у тегу `&lt;p>` з класом `lead` 
 - Розміщення у героїчній секції (hero section) 
 - Контрастні кольори для читабельності 
 
@@ -645,15 +645,15 @@ footer {
  
 Приклад структури: 
 html: 
-<header class="hero-section"> 
-    <h1>Назва енергетичного об'єкта</h1> 
-    <p class="lead">Короткий слоган або опис призначення</p> 
-</header> 
+&lt;header class="hero-section"> 
+    &lt;h1>Назва енергетичного об'єкта&lt;/h1> 
+    &lt;p class="lead">Короткий слоган або опис призначення&lt;/p> 
+&lt;/header> 
 2. Опис об'єкта 
 - Мінімум 2 абзаци тексту 
 - Логічна структура викладу 
 - Інформація про історію, призначення, особливості 
-- Використання семантичних тегів `<section>`, `<article>` 
+- Використання семантичних тегів `&lt;section>`, `&lt;article>` 
 Що включити: 
 - Історія створення/введення в експлуатацію 
 - Основне призначення та функції 
@@ -672,18 +672,18 @@ html:
 - Режим роботи 
 Структура: 
 html: 
-<table class="table table-striped table-hover"> 
-    <thead class="table-dark"> 
-        <tr> 
-            <th>Параметр</th> 
-            <th>Значення</th> 
-            <th>Одиниці виміру</th> 
-        </tr> 
-    </thead> 
-    <tbody> 
-        <!-- Рядки з даними --> 
-    </tbody> 
-</table> 
+&lt;table class="table table-striped table-hover"> 
+    &lt;thead class="table-dark"> 
+        &lt;tr> 
+            &lt;th>Параметр&lt;/th> 
+            &lt;th>Значення&lt;/th> 
+            &lt;th>Одиниці виміру&lt;/th> 
+        &lt;/tr> 
+    &lt;/thead> 
+    &lt;tbody> 
+        &lt;!-- Рядки з даними --> 
+    &lt;/tbody> 
+&lt;/table> 
 4. Зображення 
 - Мінімум 2 зображення 
 - Обов'язкові alt-атрибути 
@@ -750,124 +750,124 @@ project/
 Крок 2: Базова HTML-структура 
 Створіть файл `index.html` з валідною HTML5 структурою: 
 html: 
-<!DOCTYPE html> 
-<html lang="uk"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <meta name="description" content="Опис сайту"> 
-    <meta name="keywords" content="енергетика, підстанція, електростанція"> 
-    <title>Назва об'єкта</title> 
+&lt;!DOCTYPE html> 
+&lt;html lang="uk"> 
+&lt;head> 
+    &lt;meta charset="UTF-8"> 
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    &lt;meta name="description" content="Опис сайту"> 
+    &lt;meta name="keywords" content="енергетика, підстанція, електростанція"> 
+    &lt;title>Назва об'єкта&lt;/title> 
      
-    <!-- Bootstrap CSS --> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+    &lt;!-- Bootstrap CSS --> 
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
 rel="stylesheet"> 
      
-    <!-- Власні стилі --> 
-    <link rel="stylesheet" href="css/styles.css"> 
-</head> 
-<body> 
-    <!-- Контент --> 
+    &lt;!-- Власні стилі --> 
+    &lt;link rel="stylesheet" href="css/styles.css"> 
+&lt;/head> 
+&lt;body> 
+    &lt;!-- Контент --> 
      
-    <!-- Bootstrap JS --> 
-    <script 
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
-</body> 
-</html> 
+    &lt;!-- Bootstrap JS --> 
+    &lt;script 
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">&lt;/script> 
+&lt;/body> 
+&lt;/html> 
 ``` 
 Крок 3: Реалізація навігації 
 html: 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary"> 
-    <div class="container"> 
-        <a class="navbar-brand" href="#"> 
-            <span class="navbar-icon">⚡</span> ЕнергоПортал 
-        </a> 
-        <button class="navbar-toggler" type="button"  
+&lt;nav class="navbar navbar-expand-lg navbar-dark bg-primary"> 
+    &lt;div class="container"> 
+        &lt;a class="navbar-brand" href="#"> 
+            &lt;span class="navbar-icon">⚡&lt;/span> ЕнергоПортал 
+        &lt;/a> 
+        &lt;button class="navbar-toggler" type="button"  
 
 18 
  
                 data-bs-toggle="collapse"  
                 data-bs-target="#navbarNav"> 
-            <span class="navbar-toggler-icon"></span> 
-        </button> 
-        <div class="collapse navbar-collapse" id="navbarNav"> 
-            <ul class="navbar-nav ms-auto"> 
-                <li class="nav-item"> 
-                    <a class="nav-link active" href="#about">Про об'єкт</a> 
-                </li> 
-                <li class="nav-item"> 
-                    <a class="nav-link" href="#params">Параметри</a> 
-                </li> 
-                <li class="nav-item"> 
-                    <a class="nav-link" href="#scheme">Схема</a> 
-                </li> 
-                <li class="nav-item"> 
-                    <a class="nav-link" href="#contacts">Контакти</a> 
-                </li> 
-            </ul> 
-        </div> 
-    </div> 
-</nav> 
+            &lt;span class="navbar-toggler-icon">&lt;/span> 
+        &lt;/button> 
+        &lt;div class="collapse navbar-collapse" id="navbarNav"> 
+            &lt;ul class="navbar-nav ms-auto"> 
+                &lt;li class="nav-item"> 
+                    &lt;a class="nav-link active" href="#about">Про об'єкт&lt;/a> 
+                &lt;/li> 
+                &lt;li class="nav-item"> 
+                    &lt;a class="nav-link" href="#params">Параметри&lt;/a> 
+                &lt;/li> 
+                &lt;li class="nav-item"> 
+                    &lt;a class="nav-link" href="#scheme">Схема&lt;/a> 
+                &lt;/li> 
+                &lt;li class="nav-item"> 
+                    &lt;a class="nav-link" href="#contacts">Контакти&lt;/a> 
+                &lt;/li> 
+            &lt;/ul> 
+        &lt;/div> 
+    &lt;/div> 
+&lt;/nav> 
 Крок 4: Основний заголовок 
 html: 
-<header class="hero-section text-white text-center py-5"> 
-    <div class="container"> 
-        <h1 class="display-4 fw-bold mb-3"> 
+&lt;header class="hero-section text-white text-center py-5"> 
+    &lt;div class="container"> 
+        &lt;h1 class="display-4 fw-bold mb-3"> 
             Назва енергетичного об'єкта 
-        </h1> 
-        <p class="lead"> 
+        &lt;/h1> 
+        &lt;p class="lead"> 
             Короткий опис призначення та значення 
-        </p> 
-    </div> 
-</header> 
+        &lt;/p> 
+    &lt;/div> 
+&lt;/header> 
 Крок 5: Основний контент 
 html: 
-<main class="container my-5"> 
-    <!-- Розділ "Про об'єкт" --> 
-    <section id="about" class="mb-5"> 
-        <h2 class="section-title mb-4">Про об'єкт</h2> 
-        <div class="row"> 
-            <div class="col-lg-8"> 
-                <p>Перший абзац опису...</p> 
-                <p>Другий абзац опису...</p> 
-            </div> 
+&lt;main class="container my-5"> 
+    &lt;!-- Розділ "Про об'єкт" --> 
+    &lt;section id="about" class="mb-5"> 
+        &lt;h2 class="section-title mb-4">Про об'єкт&lt;/h2> 
+        &lt;div class="row"> 
+            &lt;div class="col-lg-8"> 
+                &lt;p>Перший абзац опису...&lt;/p> 
+                &lt;p>Другий абзац опису...&lt;/p> 
+            &lt;/div> 
 
 19 
  
-            <div class="col-lg-4"> 
-                <img src="images/main-photo.jpg"  
+            &lt;div class="col-lg-4"> 
+                &lt;img src="images/main-photo.jpg"  
                      alt="Опис зображення"  
                      class="img-fluid rounded shadow"> 
-            </div> 
-        </div> 
-    </section> 
+            &lt;/div> 
+        &lt;/div> 
+    &lt;/section> 
      
-    <!-- Інші розділи --> 
-</main> 
+    &lt;!-- Інші розділи --> 
+&lt;/main> 
 Крок 6: Таблиця параметрів 
 html: 
-<section id="params" class="mb-5"> 
-    <h2 class="section-title mb-4">Технічні параметри</h2> 
-    <div class="table-responsive"> 
-        <table class="table table-striped table-hover"> 
-            <thead class="table-dark"> 
-                <tr> 
-                    <th>Параметр</th> 
-                    <th>Значення</th> 
-                    <th>Одиниці виміру</th> 
-                </tr> 
-            </thead> 
-            <tbody> 
-                <tr> 
-                    <td>Номінальна потужність</td> 
-                    <td>63</td> 
-                    <td>МВА</td> 
-                </tr> 
-                <!-- Інші рядки --> 
-            </tbody> 
-        </table> 
-    </div> 
-</section> 
+&lt;section id="params" class="mb-5"> 
+    &lt;h2 class="section-title mb-4">Технічні параметри&lt;/h2> 
+    &lt;div class="table-responsive"> 
+        &lt;table class="table table-striped table-hover"> 
+            &lt;thead class="table-dark"> 
+                &lt;tr> 
+                    &lt;th>Параметр&lt;/th> 
+                    &lt;th>Значення&lt;/th> 
+                    &lt;th>Одиниці виміру&lt;/th> 
+                &lt;/tr> 
+            &lt;/thead> 
+            &lt;tbody> 
+                &lt;tr> 
+                    &lt;td>Номінальна потужність&lt;/td> 
+                    &lt;td>63&lt;/td> 
+                    &lt;td>МВА&lt;/td> 
+                &lt;/tr> 
+                &lt;!-- Інші рядки --> 
+            &lt;/tbody> 
+        &lt;/table> 
+    &lt;/div> 
+&lt;/section> 
 Крок 7: Створення CSS-стилів 
 Створіть файл `css/styles.css`: 
 css: 
@@ -1154,7 +1154,7 @@ footer {
 1. Що таке HTML і яку роль він відіграє у створенні веб-сторінок? 
 2. Яка базова структура HTML-документа і для чого потрібен кожен її елемент? 
 3. Які семантичні теги HTML5 використовуються для структурування сторінки? 
-4. Для чого використовується тег <nav> і які типові елементи він містить? 
+4. Для чого використовується тег &lt;nav> і які типові елементи він містить? 
 5. Яка роль CSS у веб-розробці і які способи підключення стилів існують? 
 6. У чому полягає концепція CSS Box Model і які її складові? 
 7. Чим відрізняються селектори класів, ідентифікаторів та тегів у CSS? 

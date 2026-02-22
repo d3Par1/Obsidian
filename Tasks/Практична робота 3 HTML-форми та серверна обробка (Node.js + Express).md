@@ -144,11 +144,11 @@ Express)
 3.1. Теоретичний матеріал 
 3.1.1. HTML-форми 
 HTML-форми є основним способом збору даних від користувачів. Основні елементи: 
-<form> - контейнер форми 
-<input> - поля введення (text, number, date тощо) 
-<select> - випадаючі списки 
-<textarea> - багаторядкові текстові поля 
-<button> - кнопки для відправки/очищення 
+&lt;form> - контейнер форми 
+&lt;input> - поля введення (text, number, date тощо) 
+&lt;select> - випадаючі списки 
+&lt;textarea> - багаторядкові текстові поля 
+&lt;button> - кнопки для відправки/очищення 
 3.1.2. Node.js та Express 
 Node.js - середовище виконання JavaScript на сервері. 
 Express - мінімалістичний веб-фреймворк для Node.js. 
@@ -336,105 +336,105 @@ app.listen(PORT, () => {
  
 2.2.2.1.4. HTML-форма (public/index.html) 
 html: 
-<!DOCTYPE html> 
-<html lang="uk"> 
-<head> 
-    <meta charset="UTF-8"> 
+&lt;!DOCTYPE html> 
+&lt;html lang="uk"> 
+&lt;head> 
+    &lt;meta charset="UTF-8"> 
 
 8 
  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Реєстрація споживачів енергії</title> 
-    <link rel="stylesheet" href="style.css"> 
-</head> 
-<body> 
-    <div class="container"> 
-        <header> 
-            <h1>⚡ Реєстр споживачів електроенергії</h1> 
-        </header> 
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    &lt;title>Реєстрація споживачів енергії&lt;/title> 
+    &lt;link rel="stylesheet" href="style.css"> 
+&lt;/head> 
+&lt;body> 
+    &lt;div class="container"> 
+        &lt;header> 
+            &lt;h1>⚡ Реєстр споживачів електроенергії&lt;/h1> 
+        &lt;/header> 
  
-        <main> 
-            <section class="form-section"> 
-                <h2>Реєстрація нового споживача</h2> 
-                <form id="consumerForm"> 
-                    <div class="form-group"> 
-                        <label for="name">Повне найменування об'єкта *</label> 
-                        <input type="text" id="name" name="name" required  
+        &lt;main> 
+            &lt;section class="form-section"> 
+                &lt;h2>Реєстрація нового споживача&lt;/h2> 
+                &lt;form id="consumerForm"> 
+                    &lt;div class="form-group"> 
+                        &lt;label for="name">Повне найменування об'єкта *&lt;/label> 
+                        &lt;input type="text" id="name" name="name" required  
                                placeholder="Наприклад: ТОВ 'Енергопром'"> 
-                    </div> 
+                    &lt;/div> 
  
-                    <div class="form-group"> 
-                        <label for="objectType">Тип об'єкта *</label> 
-                        <select id="objectType" name="objectType" required> 
-                            <option value="">Оберіть тип</option> 
-                            <option value="industrial">Промисловий об'єкт</option> 
-                            <option value="residential">Житловий будинок</option> 
-                            <option value="commercial">Комерційний об'єкт</option> 
-                            <option value="public">Об'єкт соціальної сфери</option> 
-                            <option value="agricultural">Сільськогосподарський об'єкт</option> 
-                        </select> 
-                    </div> 
+                    &lt;div class="form-group"> 
+                        &lt;label for="objectType">Тип об'єкта *&lt;/label> 
+                        &lt;select id="objectType" name="objectType" required> 
+                            &lt;option value="">Оберіть тип&lt;/option> 
+                            &lt;option value="industrial">Промисловий об'єкт&lt;/option> 
+                            &lt;option value="residential">Житловий будинок&lt;/option> 
+                            &lt;option value="commercial">Комерційний об'єкт&lt;/option> 
+                            &lt;option value="public">Об'єкт соціальної сфери&lt;/option> 
+                            &lt;option value="agricultural">Сільськогосподарський об'єкт&lt;/option> 
+                        &lt;/select> 
+                    &lt;/div> 
  
-                    <div class="form-group"> 
-                        <label for="address">Адреса підключення *</label> 
-                        <textarea id="address" name="address" required  
-                                  placeholder="Повна адреса з індексом"></textarea> 
-                    </div> 
+                    &lt;div class="form-group"> 
+                        &lt;label for="address">Адреса підключення *&lt;/label> 
+                        &lt;textarea id="address" name="address" required  
+                                  placeholder="Повна адреса з індексом">&lt;/textarea> 
+                    &lt;/div> 
  
-                    <div class="form-row"> 
-                        <div class="form-group"> 
-                            <label for="connectionPower">Потужність підключення (кВт) *</label> 
-                            <input type="number" id="connectionPower" name="connectionPower"  
+                    &lt;div class="form-row"> 
+                        &lt;div class="form-group"> 
+                            &lt;label for="connectionPower">Потужність підключення (кВт) *&lt;/label> 
+                            &lt;input type="number" id="connectionPower" name="connectionPower"  
                                    required min="0" step="0.1" placeholder="100"> 
-                        </div> 
+                        &lt;/div> 
  
 
 9 
  
-                        <div class="form-group"> 
-                            <label for="voltage">Напруга живлення (кВ) *</label> 
-                            <select id="voltage" name="voltage" required> 
-                                <option value="">Оберіть напругу</option> 
-                                <option value="0.4">0,4 кВ (низька)</option> 
-                                <option value="6">6 кВ (середня)</option> 
-                                <option value="10">10 кВ (середня)</option> 
-                                <option value="35">35 кВ (висока)</option> 
-                                <option value="110">110 кВ (висока)</option> 
-                            </select> 
-                        </div> 
-                    </div> 
+                        &lt;div class="form-group"> 
+                            &lt;label for="voltage">Напруга живлення (кВ) *&lt;/label> 
+                            &lt;select id="voltage" name="voltage" required> 
+                                &lt;option value="">Оберіть напругу&lt;/option> 
+                                &lt;option value="0.4">0,4 кВ (низька)&lt;/option> 
+                                &lt;option value="6">6 кВ (середня)&lt;/option> 
+                                &lt;option value="10">10 кВ (середня)&lt;/option> 
+                                &lt;option value="35">35 кВ (висока)&lt;/option> 
+                                &lt;option value="110">110 кВ (висока)&lt;/option> 
+                            &lt;/select> 
+                        &lt;/div> 
+                    &lt;/div> 
  
-                    <div class="form-group"> 
-                        <label for="phase">Кількість фаз *</label> 
-                        <div class="radio-group"> 
-                            <label> 
-                                <input type="radio" name="phase" value="1" required> Однофазне 
-                            </label> 
-                            <label> 
-                                <input type="radio" name="phase" value="3" required> Трифазне 
-                            </label> 
-                        </div> 
-                    </div> 
+                    &lt;div class="form-group"> 
+                        &lt;label for="phase">Кількість фаз *&lt;/label> 
+                        &lt;div class="radio-group"> 
+                            &lt;label> 
+                                &lt;input type="radio" name="phase" value="1" required> Однофазне 
+                            &lt;/label> 
+                            &lt;label> 
+                                &lt;input type="radio" name="phase" value="3" required> Трифазне 
+                            &lt;/label> 
+                        &lt;/div> 
+                    &lt;/div> 
  
-                    <div class="form-actions"> 
-                        <button type="submit" class="btn btn-primary">Зареєструвати</button> 
-                        <button type="reset" class="btn btn-secondary">Очистити</button> 
-                    </div> 
-                </form> 
+                    &lt;div class="form-actions"> 
+                        &lt;button type="submit" class="btn btn-primary">Зареєструвати&lt;/button> 
+                        &lt;button type="reset" class="btn btn-secondary">Очистити&lt;/button> 
+                    &lt;/div> 
+                &lt;/form> 
  
-                <div id="message" class="message"></div> 
-            </section> 
+                &lt;div id="message" class="message">&lt;/div> 
+            &lt;/section> 
  
-            <section class="data-section"> 
-                <h2>Зареєстровані споживачі</h2> 
-                <div id="consumersList" class="consumers-list"></div> 
-            </section> 
-        </main> 
-    </div> 
+            &lt;section class="data-section"> 
+                &lt;h2>Зареєстровані споживачі&lt;/h2> 
+                &lt;div id="consumersList" class="consumers-list">&lt;/div> 
+            &lt;/section> 
+        &lt;/main> 
+    &lt;/div> 
  
-    <script src="script.js"></script> 
-</body> 
-</html> 
+    &lt;script src="script.js">&lt;/script> 
+&lt;/body> 
+&lt;/html> 
 
 10 
  
@@ -727,26 +727,26 @@ async function loadConsumers() {
  
 function displayConsumers(consumers) { 
     if (consumers.length === 0) { 
-        consumersList.innerHTML   =   '<p   style="color:   #999;">Немає   зареєстрованих 
-споживачів</p>'; 
+        consumersList.innerHTML   =   '&lt;p   style="color:   #999;">Немає   зареєстрованих 
+споживачів&lt;/p>'; 
         return; 
     } 
      
     consumersList.innerHTML = consumers.map(consumer => ` 
-        <div class="consumer-card"> 
-            <h3>${consumer.name}</h3> 
-            <p><span class="label">Тип:</span> 
-${getObjectTypeName(consumer.objectType)}</p> 
-            <p><span class="label">Адреса:</span> ${consumer.address}</p> 
-            <p><span class="label">Потужність:</span> ${consumer.connectionPower} кВт</p> 
-            <p><span class="label">Напруга:</span> ${consumer.voltage} кВ</p> 
-            <p><span  class="label">Фази:</span>  ${consumer.phase  ===  '1'  ?  'Однофазне'  : 
-'Трифазне'}</p> 
-            <p><span class="label">Дата реєстрації:</span> ${new 
-Date(consumer.registrationDate).toLocaleDateString('uk-UA')}</p> 
-            <button class="btn btn-delete" 
-onclick="deleteConsumer('${consumer.id}')">Видалити</button> 
-        </div> 
+        &lt;div class="consumer-card"> 
+            &lt;h3>${consumer.name}&lt;/h3> 
+            &lt;p>&lt;span class="label">Тип:&lt;/span> 
+${getObjectTypeName(consumer.objectType)}&lt;/p> 
+            &lt;p>&lt;span class="label">Адреса:&lt;/span> ${consumer.address}&lt;/p> 
+            &lt;p>&lt;span class="label">Потужність:&lt;/span> ${consumer.connectionPower} кВт&lt;/p> 
+            &lt;p>&lt;span class="label">Напруга:&lt;/span> ${consumer.voltage} кВ&lt;/p> 
+            &lt;p>&lt;span  class="label">Фази:&lt;/span>  ${consumer.phase  ===  '1'  ?  'Однофазне'  : 
+'Трифазне'}&lt;/p> 
+            &lt;p>&lt;span class="label">Дата реєстрації:&lt;/span> ${new 
+Date(consumer.registrationDate).toLocaleDateString('uk-UA')}&lt;/p> 
+            &lt;button class="btn btn-delete" 
+onclick="deleteConsumer('${consumer.id}')">Видалити&lt;/button> 
+        &lt;/div> 
     `).join(''); 
 } 
  

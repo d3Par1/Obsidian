@@ -195,8 +195,8 @@ socket.onclose = function(event) {
 }; 
 5.1.3. Візуалізація даних 
 Chart.js - бібліотека для графіків 
-<canvas id="myChart"></canvas> 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+&lt;canvas id="myChart">&lt;/canvas> 
+&lt;script src="https://cdn.jsdelivr.net/npm/chart.js">&lt;/script> 
 const ctx = document.getElementById('myChart').getContext('2d'); 
 const chart = new Chart(ctx, { 
   type: 'line', 
@@ -272,16 +272,16 @@ function createTable(data) {
 5.2. Приклад повної реалізації 
 5.2.1.Приклад повного застосунку 
 html: 
-<!DOCTYPE html> 
-<html lang="uk"> 
-<head> 
-  <meta charset="UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>Моніторинг енергостанції</title> 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+&lt;!DOCTYPE html> 
+&lt;html lang="uk"> 
+&lt;head> 
+  &lt;meta charset="UTF-8"> 
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  &lt;title>Моніторинг енергостанції&lt;/title> 
+  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
 rel="stylesheet"> 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
-  <style> 
+  &lt;script src="https://cdn.jsdelivr.net/npm/chart.js">&lt;/script> 
+  &lt;style> 
     .status-online { color: green; font-weight: bold; } 
     .status-offline { color: red; font-weight: bold; } 
     .metric-card { 
@@ -290,54 +290,54 @@ rel="stylesheet">
       padding: 15px; 
       margin: 10px 0; 
     } 
-  </style> 
-</head> 
-<body> 
-  <div class="container mt-4"> 
-    <h1>Моніторинг сонячної електростанції</h1> 
-    <div class="row"> 
-      <div class="col-md-4"> 
-        <div class="metric-card"> 
-          <h3>Поточна потужність</h3> 
-          <h2 id="currentPower">-- кВт</h2> 
-          <p>Статус: <span id="status">--</span></p> 
-        </div> 
-      </div> 
-      <div class="col-md-4"> 
-        <div class="metric-card"> 
-          <h3>Добова генерація</h3> 
-          <h2 id="dailyEnergy">-- кВт·год</h2> 
-        </div> 
-      </div> 
-      <div class="col-md-4"> 
-        <div class="metric-card"> 
-          <h3>Ефективність</h3> 
-          <h2 id="efficiency">-- %</h2> 
-        </div> 
-      </div> 
-    </div> 
+  &lt;/style> 
+&lt;/head> 
+&lt;body> 
+  &lt;div class="container mt-4"> 
+    &lt;h1>Моніторинг сонячної електростанції&lt;/h1> 
+    &lt;div class="row"> 
+      &lt;div class="col-md-4"> 
+        &lt;div class="metric-card"> 
+          &lt;h3>Поточна потужність&lt;/h3> 
+          &lt;h2 id="currentPower">-- кВт&lt;/h2> 
+          &lt;p>Статус: &lt;span id="status">--&lt;/span>&lt;/p> 
+        &lt;/div> 
+      &lt;/div> 
+      &lt;div class="col-md-4"> 
+        &lt;div class="metric-card"> 
+          &lt;h3>Добова генерація&lt;/h3> 
+          &lt;h2 id="dailyEnergy">-- кВт·год&lt;/h2> 
+        &lt;/div> 
+      &lt;/div> 
+      &lt;div class="col-md-4"> 
+        &lt;div class="metric-card"> 
+          &lt;h3>Ефективність&lt;/h3> 
+          &lt;h2 id="efficiency">-- %&lt;/h2> 
+        &lt;/div> 
+      &lt;/div> 
+    &lt;/div> 
      
-    <div class="row mt-4"> 
-      <div class="col-md-12"> 
-        <h3>Графік потужності</h3> 
-        <canvas id="powerChart"></canvas> 
-      </div> 
+    &lt;div class="row mt-4"> 
+      &lt;div class="col-md-12"> 
+        &lt;h3>Графік потужності&lt;/h3> 
+        &lt;canvas id="powerChart">&lt;/canvas> 
+      &lt;/div> 
 
 7 
  
-    </div> 
+    &lt;/div> 
      
-    <div class="row mt-4"> 
-      <div class="col-md-12"> 
-        <h3>Історія вимірювань</h3> 
-        <div id="dataTable"></div> 
-      </div> 
-    </div> 
-  </div> 
+    &lt;div class="row mt-4"> 
+      &lt;div class="col-md-12"> 
+        &lt;h3>Історія вимірювань&lt;/h3> 
+        &lt;div id="dataTable">&lt;/div> 
+      &lt;/div> 
+    &lt;/div> 
+  &lt;/div> 
  
-  <script src="app.js"></script> 
-</body> 
-</html> 
+  &lt;script src="app.js">&lt;/script> 
+&lt;/body> 
+&lt;/html> 
  
 javascript: 
 // app.js 
@@ -457,26 +457,26 @@ class EnergyMonitor {
     table.className = 'table table-striped table-hover'; 
      
     table.innerHTML = ` 
-      <thead> 
-        <tr> 
-          <th>Час</th> 
-          <th>Потужність (кВт)</th> 
-          <th>Напруга (В)</th> 
-          <th>Струм (А)</th> 
-          <th>Ефективність (%)</th> 
-        </tr> 
-      </thead> 
-      <tbody> 
+      &lt;thead> 
+        &lt;tr> 
+          &lt;th>Час&lt;/th> 
+          &lt;th>Потужність (кВт)&lt;/th> 
+          &lt;th>Напруга (В)&lt;/th> 
+          &lt;th>Струм (А)&lt;/th> 
+          &lt;th>Ефективність (%)&lt;/th> 
+        &lt;/tr> 
+      &lt;/thead> 
+      &lt;tbody> 
         ${this.dataHistory.map(item => ` 
-          <tr> 
-            <td>${new Date(item.timestamp).toLocaleTimeString()}</td> 
-            <td>${item.power.toFixed(2)}</td> 
-            <td>${item.voltage.toFixed(1)}</td> 
-            <td>${item.current.toFixed(2)}</td> 
-            <td>${item.efficiency.toFixed(1)}</td> 
-          </tr> 
+          &lt;tr> 
+            &lt;td>${new Date(item.timestamp).toLocaleTimeString()}&lt;/td> 
+            &lt;td>${item.power.toFixed(2)}&lt;/td> 
+            &lt;td>${item.voltage.toFixed(1)}&lt;/td> 
+            &lt;td>${item.current.toFixed(2)}&lt;/td> 
+            &lt;td>${item.efficiency.toFixed(1)}&lt;/td> 
+          &lt;/tr> 
         `).join('')} 
-      </tbody> 
+      &lt;/tbody> 
     `; 
      
     tableDiv.innerHTML = ''; 
@@ -1228,7 +1228,7 @@ https://websocketking.com/ - Назва з екрана.
  
 Додаток Б: Додаткові бібліотеки для візуалізації 
 Б.1. Plotly.js - інтерактивні графіки 
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+&lt;script src="https://cdn.plot.ly/plotly-latest.min.js">&lt;/script> 
 const trace = { 
   x: timestamps, 
   y: powers, 
@@ -1246,7 +1246,7 @@ const layout = {
 Plotly.newPlot('myDiv', [trace], layout); 
  
 Б.2. D3.js - складна візуалізація 
-<script src="https://d3js.org/d3.v7.min.js"></script> 
+&lt;script src="https://d3js.org/d3.v7.min.js">&lt;/script> 
 // Приклад gauge-індикатора 
 const svg = d3.select("#gauge") 
   .append("svg") 
@@ -1269,7 +1269,7 @@ svg.append("path")
   .attr("fill", "steelblue"); 
  
 Б.3. ApexCharts - сучасні графіки 
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
+&lt;script src="https://cdn.jsdelivr.net/npm/apexcharts">&lt;/script> 
 const options = { 
   series: [{ 
     name: 'Потужність', 
