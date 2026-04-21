@@ -21,7 +21,7 @@ CS Student @ Igor Sikorsky KPI | Full-Stack Developer (Node.js · React · C#) |
 ## 2. About (Про мене)
 
 ```
-Computer Science student at Igor Sikorsky Kyiv Polytechnic Institute (2nd year, group ТВ-43),
+Computer Science student at Igor Sikorsky Kyiv Polytechnic Institute (2nd year),
 building full-stack web applications and exploring game development.
 
 🛠 What I work with:
