@@ -39,6 +39,18 @@ Computer Science student (2nd year, KPI) focused on embedded systems, Linux, and
 - Team project (2 engineers); owned auth, accounts, dashboard, and API layers end-to-end.
 - **Repo:** github.com/d3Par1/Coursework_Web
 
+### Telegram Bots — Python Side Projects *(2025–Present)*
+**Stack:** Python · python-telegram-bot / aiogram · SQLite · Telegram Bot API
+- Built several Telegram bots exploring command handlers, inline keyboards, FSM (finite-state machines), and webhook deployment.
+- Practiced async Python (`asyncio`), HTTP integration with external APIs, and persistent state via SQLite.
+- Demonstrates rapid prototyping skills, comfort with conversational interfaces, and end-to-end ownership of a small backend product.
+
+### Microcontroller Hands-On Practice — Raspberry Pi Pico W & ESP32 *(2025–Present)*
+**Stack:** C / C++ · MicroPython · Arduino IDE · PlatformIO
+- Self-driven exploratory projects on Raspberry Pi Pico W and ESP32 — GPIO control, sensor reading, Wi-Fi connectivity, basic peripherals (LEDs, buttons, OLED display, sensors).
+- Built familiarity with the embedded development workflow: toolchain setup, flashing, serial debugging, datasheet reading.
+- Currently extending experience toward STM32 bare-metal (HAL/CMSIS) and FreeRTOS.
+
 ### University Coursework — System Software & OOP *(2025–2026)*
 **Stack:** C, C++, C#
 - Implemented low-level system software exercises in C — memory management, process scheduling, IPC primitives.
@@ -60,13 +72,11 @@ Computer Science student (2nd year, KPI) focused on embedded systems, Linux, and
 
 ---
 
-## IN PROGRESS *(roadmap of embedded projects — Q2–Q3 2026)*
+## IN PROGRESS *(focused embedded learning roadmap — 2026)*
 
-> *Чесний розділ: показати, що ви активно рухаєтесь у embedded-напрямку.*
-
-- **STM32 / ESP32 firmware basics** — GPIO, timers, interrupts, UART telemetry; project: telemetry transmitter prototype.
-- **FreeRTOS task scheduling** — multi-task firmware on STM32 with shared peripherals.
-- **MAVLink protocol study** — message parsing in C; integration with PX4/ArduPilot SITL.
+- **STM32 bare-metal firmware** — HAL/CMSIS, timers, interrupts, UART telemetry; building on existing Pico W / ESP32 experience.
+- **FreeRTOS task scheduling** — multi-task firmware with shared peripherals, mutexes, queues.
+- **MAVLink protocol** — message parsing in C; integration with PX4/ArduPilot SITL.
 - **Drone simulator (PX4 + Gazebo)** — autonomous mission scripting in Python/C++.
 - **ROS2 fundamentals** — publisher/subscriber nodes, sensor data pipelines.
 
@@ -75,9 +85,21 @@ Computer Science student (2nd year, KPI) focused on embedded systems, Linux, and
 ## EDUCATION
 
 **Igor Sikorsky Kyiv Polytechnic Institute** *(09.2024 – 06.2028 expected)*
-B.Sc. Software Engineering · 
+B.Sc. Software Engineering · Group ТВ-43
 
 *Relevant coursework:* System Software Architecture · Object-Oriented Analysis & Design · Web Programming · Data Structures & Algorithms · Software Engineering Components · Operating Systems
+
+---
+
+## TRAININGS & SELF-DIRECTED LEARNING
+
+- **Linux Basics** — KodeKloud (online, 2024). Shell, file system, process management, networking basics.
+- **Web Programming Foundations** — KPI structured course (2025–2026). HTTP, REST, server-side rendering, relational databases.
+- **Telegram Bot API & async Python** — self-paced, multiple side projects (2025–present).
+- **Blender 3D modeling** — self-paced via official tutorials and community resources (2024–present). Mesh modeling, UV, lighting, rendering.
+- **Microcontroller hands-on** — self-paced experimentation with Raspberry Pi Pico W and ESP32 platforms.
+
+> *Список оновлюється — додавай сертифікати, як проходитимеш нові курси.*
 
 ---
 
