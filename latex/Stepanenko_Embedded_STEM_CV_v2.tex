@@ -1,0 +1,142 @@
+%-------------------------
+% Stepanenko Nazar — Embedded / Miltech CV
+% STEM-style v2 — XeLaTeX, FontAwesome icons, optimized for 1 page
+%
+% IMPORTANT: Compile with XeLaTeX (Overleaf: Menu → Compiler → XeLaTeX)
+%            (НЕ pdfLaTeX — потрібна UTF-8 підтримка для "ТВ-43")
+%-------------------------
+
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+% More aggressive geometry to fit 1 page
+\usepackage[scale=0.82, top=1cm, bottom=1cm, left=1.5cm, right=1.5cm]{geometry}
+\setlength{\hintscolumnwidth}{3cm}
+
+% XeLaTeX UTF-8 + Cyrillic support
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguage{ukrainian}
+
+% Set fonts that support Cyrillic AND look professional
+\setmainfont{Latin Modern Roman}
+\setsansfont{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+
+% FontAwesome 5 for ALL icons (replaces broken moderncv \social)
+\usepackage{fontawesome5}
+
+% Tighter spacing for 1-page fit
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=2pt, leftmargin=*}
+
+% Reduce section spacing
+\renewcommand*{\sectionfont}{\Large\mdseries\upshape}
+\setlength{\parskip}{0.3em}
+
+% Personal data
+\firstname{Nazar}
+\familyname{Stepanenko}
+\title{\faMicrochip\ Embedded / Miltech Software Engineer (Junior)}
+\address{Kyiv, Ukraine}{}{}
+
+% Custom contact line with FontAwesome icons (more reliable than \social)
+\extrainfo{%
+    \faPhone\ +38 (063) XXX XX XX \quad
+    \faEnvelope\ \href{mailto:gangsterstepa@gmail.com}{gangsterstepa@gmail.com} \\[1mm]
+    \faGithub\ \href{https://github.com/d3Par1}{github.com/d3Par1} \quad
+    \faLinkedin\ \href{https://www.linkedin.com/in/yourhandle}{linkedin.com/in/yourhandle} \quad
+    \faTelegram\ @yourhandle \\[1mm]
+    \faGlobe\ \textbf{UA} (native) \textbullet\ \textbf{EN} C1 \textbullet\ \textbf{FR} B1--B2 \textbullet\ \textbf{DE} A1--A2
+}
+
+\begin{document}
+
+\makecvtitle
+\vspace{-1em}
+
+%-----------SUMMARY-----------
+\section{\faUser\ Summary}
+\cvitem{}{\small Computer Science student (2nd year, Igor Sikorsky KPI, group \textukrainian{ТВ}-43) focused on \textbf{embedded systems, Linux, and unmanned platform software for defense}. Strong foundation in C/C++ and systems programming, hands-on practice with Raspberry Pi Pico W and ESP32. Building experience toward STM32 bare-metal, FreeRTOS, and drone software stacks (PX4 / MAVLink) to contribute to Ukrainian miltech and autonomous-systems engineering.}
+
+%-----------SKILLS-----------
+\section{\faCogs\ Technical Skills}
+\cvitem{\faCode\ Programming}{\small C / C++, Python, C\#, JavaScript / Node.js, Lua, SQL, HTML/CSS}
+\cvitem{\faMicrochip\ Embedded}{\small Raspberry Pi Pico W, ESP32 (Wi-Fi/BLE), Linux (CLI, Bash), GPIO / UART / I\textsuperscript{2}C / SPI basics, RTOS concepts (learning), real-time data \& sensor integration}
+\cvitem{\faTools\ Tools}{\small Git, VS Code, CLion, CMake, PlatformIO, Arduino IDE, Docker (basic), Wireshark (basic), Blender (3D modeling)}
+\cvitem{\faRocket\ Domain}{\small UAV / drone software, autonomous systems, sensor fusion, defense electronics, secure firmware}
+
+%-----------PROJECTS-----------
+\section{\faFolderOpen\ Projects}
+
+\cventry{2025--Present}
+        {\faMicrochip\ Microcontroller Hands-On Practice}
+        {Raspberry Pi Pico W \& ESP32}
+        {}
+        {\textit{C / C++, MicroPython, Arduino IDE, PlatformIO}}
+        {\small Self-driven exploratory projects: GPIO control, sensor reading, Wi-Fi connectivity, basic peripherals (LEDs, buttons, OLED, sensors). Built familiarity with embedded workflow: toolchain setup, flashing, serial debugging, datasheet reading. Currently extending toward STM32 bare-metal (HAL/CMSIS) and FreeRTOS.}
+
+\cventry{2026}
+        {\faChartLine\ Personal Finance Manager}
+        {Full-stack web app, team of 2}
+        {KPI coursework}
+        {\textit{Node.js, Express, SQLite, Bootstrap, EJS, Chart.js}}
+        {\small Built auth (bcrypt + sessions), multi-account architecture, REST API, analytics dashboard with Chart.js. Owned auth, accounts, dashboard, API end-to-end. \href{https://github.com/d3Par1/Coursework_Web}{\faGithub\ Coursework\_Web}}
+
+\cventry{2025--Present}
+        {\faRobot\ Telegram Bots}
+        {Python side projects}
+        {}
+        {\textit{Python, aiogram / python-telegram-bot, SQLite}}
+        {\small Built several Telegram bots exploring command handlers, inline keyboards, FSM, webhook deployment. Practiced async Python (\texttt{asyncio}), HTTP integration with external APIs, persistent state via SQLite.}
+
+\cventry{2025--2026}
+        {\faGraduationCap\ University Coursework — System Software \& OOP}
+        {KPI}
+        {}
+        {\textit{C, C++, C\#}}
+        {\small Implemented low-level system programs in C (memory management, process scheduling, IPC primitives). Designed object-oriented systems in C\# covering SOLID principles, design patterns. \href{https://github.com/d3Par1/University-Repository}{\faGithub\ University-Repository}}
+
+\cventry{2025--Present}
+        {\faGamepad\ Roblox Grinding Simulator}
+        {Solo game project}
+        {}
+        {\textit{Lua, Vide reactive UI, Blender (3D assets)}}
+        {\small Solo-developed gameplay loop, inventory, shop systems. Designed adaptive UI with cross-device scaling. Created custom 3D assets and preview scenes in Blender — full ownership of code, UI, visual content.}
+
+%-----------IN PROGRESS-----------
+\section{\faRoad\ Learning Roadmap (2026)}
+\begin{itemize}
+    \item[\faChevronRight] \small \textbf{STM32 bare-metal} — HAL/CMSIS, timers, interrupts, UART telemetry
+    \item[\faChevronRight] \small \textbf{FreeRTOS} — multi-task firmware, mutexes, queues, shared peripherals
+    \item[\faChevronRight] \small \textbf{MAVLink protocol} — message parsing in C; PX4 / ArduPilot SITL integration
+    \item[\faChevronRight] \small \textbf{PX4 + Gazebo simulator} — autonomous mission scripting
+    \item[\faChevronRight] \small \textbf{ROS2 fundamentals} — pub/sub nodes, sensor data pipelines
+\end{itemize}
+
+%-----------EDUCATION-----------
+\section{\faUniversity\ Education}
+\cventry{Sep. 2024--Jun. 2028}
+        {B.Sc. Software Engineering}
+        {Igor Sikorsky Kyiv Polytechnic Institute (KPI)}
+        {Kyiv, Ukraine}
+        {Group \textukrainian{ТВ}-43}
+        {\small Coursework: System Software Architecture, OOA \& D, Web Programming, Algorithms, OS, Software Engineering Components.}
+
+%-----------TRAININGS-----------
+\section{\faCertificate\ Trainings \& Self-Learning}
+\begin{itemize}
+    \item[\faBookmark] \small \textbf{Linux Basics} — KodeKloud (online, 2024)
+    \item[\faBookmark] \small \textbf{Web Programming Foundations} — KPI structured course (2025--2026)
+    \item[\faBookmark] \small \textbf{Telegram Bot API \& async Python} — self-paced (2025--present)
+    \item[\faBookmark] \small \textbf{Blender 3D modeling} — self-paced via official tutorials
+    \item[\faBookmark] \small \textbf{Microcontroller hands-on} — self-paced with Pico W and ESP32
+\end{itemize}
+
+\vspace{0.3em}
+\small\textit{\faShieldAlt\ Defense-tech motivated $\bullet$ \faSearchPlus\ Self-learner $\bullet$ \faPaperPlane\ Open to: Internship $\cdot$ Working Student $\cdot$ Junior (Kyiv / Remote / Hybrid)}
+
+\end{document}
