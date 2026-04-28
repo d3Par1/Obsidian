@@ -1,0 +1,132 @@
+%==========================================================================
+% Stepanenko Nazar — Embedded / Miltech Software Engineer (Junior) CV
+% PDFLATEX-COMPATIBLE VERSION  (для тих, хто не може переключити компілятор)
+%==========================================================================
+%
+% ⚠️  BEFORE COMPILING — REPLACE 3 PLACEHOLDERS:
+%   1. Phone:    +380 63 XXX XX XX     →  твій реальний номер
+%   2. LinkedIn: linkedin.com/in/your-handle  →  твій URL
+%   3. Telegram: @your_handle          →  твій нік
+%
+% ✅  COMPILER: works with pdfLaTeX, XeLaTeX, AND LuaLaTeX.
+%               На Overleaf просто натисни Recompile — за замовчуванням pdfLaTeX.
+%==========================================================================
+
+\documentclass[10pt,a4paper,sans]{moderncv}
+
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+% Aggressive geometry — 1 page strict
+\usepackage[scale=0.88, top=0.8cm, bottom=0.8cm, left=1.2cm, right=1.2cm]{geometry}
+\setlength{\hintscolumnwidth}{2.7cm}
+
+% pdfLaTeX UTF-8 + Cyrillic support (БЕЗ fontspec!)
+\usepackage[utf8]{inputenc}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[ukrainian,english]{babel}
+
+% Icons — FontAwesome 5 works in pdfLaTeX too
+\usepackage{fontawesome5}
+
+% Tight spacing for 1-page fit
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=1pt, leftmargin=*}
+
+\renewcommand*{\sectionfont}{\large\mdseries\upshape}
+\setlength{\parskip}{0.2em}
+
+% Personal data
+\firstname{Nazar}
+\familyname{Stepanenko}
+\title{\faMicrochip\ Embedded Software Engineer (Junior) \quad \faShieldAlt\ Defense Tech-Oriented}
+\address{Kyiv, Ukraine}{}{}
+
+% Contact line — FontAwesome icons
+\extrainfo{%
+    \faPhone\ +380 63 XXX XX XX \quad
+    \faEnvelope\ \href{mailto:gangsterstepa@gmail.com}{gangsterstepa@gmail.com} \\[0.8mm]
+    \faGithub\ \href{https://github.com/d3Par1}{github.com/d3Par1} \quad
+    \faLinkedin\ \href{https://www.linkedin.com/in/your-handle}{linkedin.com/in/your-handle} \quad
+    \faTelegram\ @your\_handle \\[0.8mm]
+    \faGlobe\ \textbf{UA} native $\bullet$ \textbf{EN} C1 $\bullet$ \textbf{FR} B1--B2 $\bullet$ \textbf{DE} A1--A2
+}
+
+\begin{document}
+
+\makecvtitle
+\vspace{-1.2em}
+
+%-----------SUMMARY-----------
+\section{\faUser\ Summary}
+\cvitem{}{\small Computer Science student (2nd year, Igor Sikorsky KPI, group \foreignlanguage{ukrainian}{ТВ}-43) building toward \textbf{embedded systems and unmanned-platform software for defense applications}. Strong C/C++ and Python foundation, hands-on with Raspberry Pi Pico W and ESP32, full-stack web ownership shipped as coursework. Currently extending toward STM32 bare-metal, FreeRTOS, and MAVLink-based drone software.}
+
+%-----------SKILLS-----------
+\section{\faCogs\ Technical Skills}
+\cvitem{\faCode\ Programming}{\small C / C++, Python, C\#, JavaScript / Node.js, Lua, SQL, HTML/CSS}
+\cvitem{\faMicrochip\ Embedded}{\small Raspberry Pi Pico W, ESP32 (Wi-Fi/BLE), Linux (CLI, Bash), GPIO / UART / I\textsuperscript{2}C / SPI basics, RTOS concepts (learning)}
+\cvitem{\faTools\ Tools}{\small Git, VS Code, CLion, CMake, PlatformIO, Arduino IDE, Docker (basic), Wireshark, Blender (3D)}
+\cvitem{\faRocket\ Areas of Interest}{\small UAV / drone software, autonomous systems, sensor fusion, defense electronics, secure firmware}
+
+%-----------PROJECTS-----------
+\section{\faFolderOpen\ Projects}
+
+\cventry{05/2025 -- Present}
+        {\faMicrochip\ Microcontroller Hands-On Practice}
+        {Self-directed}
+        {Pico W \& ESP32}
+        {\textit{C / C++, MicroPython, PlatformIO, Arduino IDE}}
+        {\small Exploratory projects across 2 board families: GPIO, sensor reading (BMP280, OLED, IMU), Wi-Fi/BLE connectivity, basic peripheral drivers. Workflow practice: toolchain setup, flashing, serial debugging, datasheet reading. \textbf{Next:} STM32 bare-metal (HAL/CMSIS), FreeRTOS multi-task firmware.}
+
+\cventry{09/2025 -- 04/2026}
+        {\faChartLine\ Personal Finance Manager}
+        {Coursework, team of 2}
+        {KPI Web Programming}
+        {\textit{Node.js, Express, SQLite (better-sqlite3), Bootstrap 5, Chart.js}}
+        {\small Full-stack web app with 4 module domains: \textbf{auth} (bcrypt + sessions), \textbf{multi-account architecture}, \textbf{transactions REST API}, \textbf{Chart.js analytics dashboard}. Owned auth, accounts, dashboard, API end-to-end. Repo: \href{https://github.com/d3Par1/Coursework_Web}{\faGithub\ d3Par1/Coursework\_Web}}
+
+\cventry{2025 -- Present}
+        {\faRobot\ Telegram Bots in Python}
+        {Side projects}
+        {}
+        {\textit{Python, aiogram / python-telegram-bot, asyncio, SQLite}}
+        {\small Multiple bots covering command handlers, inline keyboards, FSM (finite-state machines), webhook deployment. Async Python (\texttt{asyncio}), HTTP integration with external APIs, persistent state in SQLite. End-to-end product ownership.}
+
+\cventry{2024 -- 2026}
+        {\faGraduationCap\ University Coursework — Systems \& OOP}
+        {KPI}
+        {}
+        {\textit{C, C++, C\#}}
+        {\small Low-level systems programming in C: memory management, process scheduling, IPC primitives. OOP design in C\#: SOLID, design patterns, software architecture. Repo: \href{https://github.com/d3Par1/University-Repository}{\faGithub\ d3Par1/University-Repository}}
+
+%-----------EDUCATION-----------
+\section{\faUniversity\ Education}
+\cventry{09/2024 -- 06/2028}
+        {B.Sc. Software Engineering}
+        {Igor Sikorsky Kyiv Polytechnic Institute (KPI)}
+        {Kyiv, Ukraine}
+        {Group \foreignlanguage{ukrainian}{ТВ}-43}
+        {\small Coursework: System Software Architecture, OOA \& D, Web Programming, Data Structures \& Algorithms, Operating Systems, Software Engineering Components.}
+
+%-----------TRAININGS-----------
+\section{\faCertificate\ Trainings \& Self-Learning}
+\begin{itemize}
+    \item[\faBookmark] \small \textbf{Linux Basics} --- KodeKloud (online course, 2024)
+    \item[\faBookmark] \small \textbf{Web Programming} --- KPI structured course (2025--2026)
+    \item[\faBookmark] \small \textbf{Telegram Bot API \& async Python} --- self-paced, multiple shipped bots
+    \item[\faBookmark] \small \textbf{Microcontroller hands-on} --- Raspberry Pi Pico W and ESP32, self-paced
+    \item[\faBookmark] \small \textbf{Blender 3D modeling} --- self-paced, custom assets for solo Roblox project
+\end{itemize}
+
+%-----------ROADMAP-----------
+\section{\faRoad\ 2026 Learning Roadmap}
+\begin{itemize}
+    \item[\faChevronRight] \small \textbf{STM32 bare-metal} (HAL/CMSIS) $\bullet$ \textbf{FreeRTOS} multitasking $\bullet$ \textbf{MAVLink} parser in C
+    \item[\faChevronRight] \small \textbf{PX4 + Gazebo} simulation $\bullet$ \textbf{ROS2} pub/sub fundamentals
+\end{itemize}
+
+%-----------FOOTER-----------
+\vspace{0.3em}
+\small\textbf{\faPaperPlane\ Open to:} Internship $\cdot$ Working Student $\cdot$ Junior roles \quad (Kyiv / Remote / Hybrid / EU remote)
+
+\end{document}

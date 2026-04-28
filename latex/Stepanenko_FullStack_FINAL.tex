@@ -1,0 +1,127 @@
+%==========================================================================
+% Stepanenko Nazar — Full-Stack / Web Developer (Junior) CV
+% PRODUCTION-READY VERSION (всі критичні і high-priority фікси з HR-аудиту)
+%==========================================================================
+%
+% ⚠️  BEFORE COMPILING — REPLACE 3 PLACEHOLDERS:
+%   1. Phone:    +380 63 XXX XX XX     →  твій реальний номер
+%   2. LinkedIn: linkedin.com/in/your-handle  →  твій URL
+%   3. Telegram: @your_handle          →  твій нік
+%
+% ⚠️  COMPILER:  XeLaTeX  (Overleaf:  Menu → Compiler → XeLaTeX)
+%==========================================================================
+
+\documentclass[10pt,a4paper,sans]{moderncv}
+
+\moderncvstyle{banking}
+\moderncvcolor{green}
+
+\usepackage[scale=0.88, top=0.8cm, bottom=0.8cm, left=1.2cm, right=1.2cm]{geometry}
+\setlength{\hintscolumnwidth}{2.7cm}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguage{ukrainian}
+\setmainfont{Latin Modern Sans}
+
+\usepackage{fontawesome5}
+
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=1pt, leftmargin=*}
+
+\renewcommand*{\sectionfont}{\large\mdseries\upshape}
+\setlength{\parskip}{0.2em}
+
+\firstname{Nazar}
+\familyname{Stepanenko}
+\title{\faCode\ Full-Stack / Web Developer (Junior)}
+\address{Kyiv, Ukraine}{}{}
+
+\extrainfo{%
+    \faPhone\ +380 63 XXX XX XX \quad
+    \faEnvelope\ \href{mailto:gangsterstepa@gmail.com}{gangsterstepa@gmail.com} \\[0.8mm]
+    \faGithub\ \href{https://github.com/d3Par1}{github.com/d3Par1} \quad
+    \faLinkedin\ \href{https://www.linkedin.com/in/your-handle}{linkedin.com/in/your-handle} \quad
+    \faTelegram\ @your\_handle \\[0.8mm]
+    \faGlobe\ \textbf{UA} native $\bullet$ \textbf{EN} C1 $\bullet$ \textbf{FR} B1--B2 $\bullet$ \textbf{DE} A1--A2
+}
+
+\begin{document}
+
+\makecvtitle
+\vspace{-1.2em}
+
+%-----------SUMMARY-----------
+\section{\faUser\ Summary}
+\cvitem{}{\small Computer Science student (2nd year, Igor Sikorsky KPI, group \textukrainian{ТВ}-43) building \textbf{production-style full-stack web applications} with Node.js, Express, and modern frontend tooling. Recently shipped a finance-management web app as team coursework, plus several Python side projects (Telegram bots, automation). Looking for an internship or working-student role to grow as a full-stack engineer in a product-driven team.}
+
+%-----------SKILLS-----------
+\section{\faCogs\ Technical Skills}
+\cvitem{\faCode\ Programming}{\small JavaScript / Node.js, Python, C\#, C / C++, Lua, SQL, HTML, CSS}
+\cvitem{\faServer\ Web \& Backend}{\small Express.js, REST API design, EJS, Bootstrap 5, Chart.js, SQL (SQLite) schema design, Authentication (bcrypt, sessions), Async Python (asyncio, aiogram)}
+\cvitem{\faTools\ Tools}{\small Git, GitHub Actions (basic), npm/pnpm, VS Code, Postman, Docker (basic), Linux (CLI, Bash), Blender (3D)}
+\cvitem{\faRocket\ Areas of Interest}{\small SaaS, fintech, dev tools, productivity products, e-commerce}
+
+%-----------PROJECTS-----------
+\section{\faFolderOpen\ Projects}
+
+\cventry{09/2025 -- 04/2026}
+        {\faChartLine\ Personal Finance Manager}
+        {Coursework, team of 2}
+        {KPI Web Programming}
+        {\textit{Node.js, Express, SQLite (better-sqlite3), Bootstrap 5, EJS, Chart.js}}
+        {\small Full-stack web app with 4 module domains: \textbf{auth} (bcrypt + sessions), \textbf{multi-account architecture}, \textbf{transactions REST API}, \textbf{Chart.js analytics dashboard with server-side aggregation}. Designed relational schema with referential integrity. Owned auth, accounts, dashboard, API end-to-end. Repo: \href{https://github.com/d3Par1/Coursework_Web}{\faGithub\ d3Par1/Coursework\_Web}}
+
+\cventry{2025 -- Present}
+        {\faRobot\ Telegram Bots in Python}
+        {Side projects}
+        {}
+        {\textit{Python, aiogram / python-telegram-bot, asyncio, SQLite}}
+        {\small Multiple bots covering command handlers, inline keyboards, FSM (finite-state machines), webhook deployment. Async Python, HTTP integration with external APIs, persistent state in SQLite. End-to-end product ownership: requirements → implementation → deployment.}
+
+\cventry{2024 -- 2026}
+        {\faGraduationCap\ University Coursework — OOP \& Systems}
+        {KPI}
+        {}
+        {\textit{C\#, C, C++}}
+        {\small OOP design in C\#: SOLID principles, design patterns, software architecture. Low-level systems in C: memory management, process scheduling, IPC primitives. Repo: \href{https://github.com/d3Par1/University-Repository}{\faGithub\ d3Par1/University-Repository}}
+
+\cventry{05/2025 -- Present}
+        {\faMicrochip\ Microcontroller Side Projects}
+        {Self-directed}
+        {Pico W \& ESP32}
+        {\textit{C / C++, MicroPython}}
+        {\small Hands-on with Pico W and ESP32: GPIO, sensors, Wi-Fi connectivity. Adds breadth — comfort with hardware-software boundaries and rapid prototyping outside the web stack.}
+
+%-----------EDUCATION-----------
+\section{\faUniversity\ Education}
+\cventry{09/2024 -- 06/2028}
+        {B.Sc. Software Engineering}
+        {Igor Sikorsky Kyiv Polytechnic Institute (KPI)}
+        {Kyiv, Ukraine}
+        {Group \textukrainian{ТВ}-43}
+        {\small Coursework: Web Programming, Object-Oriented Analysis \& Design, Software Engineering Components, Data Structures \& Algorithms, Operating Systems, System Software Architecture.}
+
+%-----------TRAININGS-----------
+\section{\faCertificate\ Trainings \& Self-Learning}
+\begin{itemize}
+    \item[\faBookmark] \small \textbf{Linux Basics} — KodeKloud (online course, 2024)
+    \item[\faBookmark] \small \textbf{Web Programming} — KPI structured course (2025--2026)
+    \item[\faBookmark] \small \textbf{Telegram Bot API \& async Python} — self-paced, multiple shipped bots
+    \item[\faBookmark] \small \textbf{Blender 3D modeling} — self-paced, custom assets for solo Roblox project
+    \item[\faBookmark] \small \textbf{Microcontroller hands-on} — Pico W and ESP32, self-paced
+\end{itemize}
+
+%-----------ROADMAP-----------
+\section{\faRoad\ 2026 Learning Roadmap}
+\begin{itemize}
+    \item[\faChevronRight] \small \textbf{TypeScript} migration $\bullet$ \textbf{React + Next.js} $\bullet$ \textbf{PostgreSQL} (indexing, query planning)
+    \item[\faChevronRight] \small \textbf{Docker} multi-service compose $\bullet$ \textbf{Testing} (Jest, Playwright) $\bullet$ \textbf{CI/CD} (GitHub Actions)
+\end{itemize}
+
+%-----------FOOTER-----------
+\vspace{0.3em}
+\small\textbf{\faPaperPlane\ Open to:} Internship $\cdot$ Working Student $\cdot$ Junior roles \quad (Kyiv / Remote / Hybrid / EU remote)
+
+\end{document}
