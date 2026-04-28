@@ -13,19 +13,18 @@ Computer Science student (2nd year, KPI) focused on embedded systems, Linux, and
 
 ## SKILLS
 
-| Languages | Embedded & Systems | Tools & Workflow |
+| Programming Languages | Embedded & Systems | Tools & Workflow |
 |---|---|---|
-| C / C++ | Linux (CLI, Bash, scripting) | Git / GitHub |
-| C# (OOP) | Microcontroller programming (in progress: STM32 / ESP32) | VS Code, CLion |
-| JavaScript / Node.js | UART, I²C, SPI (learning) | CMake / Makefiles |
+| C / C++ | Raspberry Pi Pico W (hands-on) | Git / GitHub |
+| Python (Telegram bots, scripting) | ESP32 (hands-on, Wi-Fi/BLE) | VS Code, CLion |
+| C# (OOP) | Linux (CLI, Bash, scripting) | CMake / Makefiles |
+| JavaScript / Node.js | GPIO, UART, I²C, SPI basics | PlatformIO, Arduino IDE |
 | Lua (Roblox) | RTOS concepts (learning) | Docker (basic) |
-| Python (basic) | Sensor integration, GPIO | PlatformIO |
-| SQL | Real-time data processing | Wireshark (basic) |
-|  |  | **Blender (3D modeling)** |
+| SQL | Real-time data, sensor integration | Wireshark (basic), Blender |
 
 **3D / Visualization:** Blender — self-taught 3D modeling for game assets and preview scenes (Roblox projects). Comfortable with mesh modeling, UV mapping, lighting, and rendering. Transferable to hardware visualization, technical mockups, and 3D-printable enclosures.
 
-**Languages:** Ukrainian (Native) · English (Advanced C1)
+**Spoken Languages:** Ukrainian (Native) · English (Advanced **C1**) · French (Intermediate **B1–B2**) · German (Beginner **A1–A2**)
 
 **Domain interest:** UAV/drone software, autonomous systems, sensor fusion, defense electronics, secure firmware
 
