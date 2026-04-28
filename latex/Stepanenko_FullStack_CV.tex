@@ -1,0 +1,225 @@
+%-------------------------
+% Stepanenko Nazar — Full-Stack / Web Developer CV
+% Based on Jake's Resume template (https://github.com/jakegut/resume)
+% License: MIT
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{xcolor}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Accent color — slightly different to differentiate
+\definecolor{accent}{HTML}{0A6E47}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries\color{accent}
+}{}{0em}{}[\color{accent}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Stepanenko Nazar} \\ \vspace{4pt}
+    \small {\color{accent}\textbf{Full-Stack / Web Developer (Junior)}} \\ \vspace{4pt}
+    \faMapMarker* \, Kyiv, Ukraine \quad
+    \faEnvelope \, \href{mailto:gangsterstepa@gmail.com}{gangsterstepa@gmail.com} \quad
+    \faGithub \, \href{https://github.com/d3Par1}{github.com/d3Par1} \quad
+    \faLinkedin \, \href{https://www.linkedin.com/in/yourhandle}{LinkedIn} \quad
+    \faTelegram \, @yourhandle
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\small
+Computer Science student (2nd year, Igor Sikorsky KPI) building production-style full-stack web applications with Node.js, Express, and modern frontend tooling. Recently shipped a finance-management web app as a team coursework, plus several side projects in Python (Telegram bots), Lua (Roblox), and 3D content (Blender). Looking for an internship or working-student role to grow as a full-stack engineer in a product-driven team.
+\vspace{-6pt}
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: JavaScript / Node.js, Python, C\#, C / C++, Lua, SQL, HTML, CSS} \\
+     \textbf{Web \& Backend}{: Express.js, REST API design, EJS, Bootstrap 5, Chart.js, SQL (SQLite) schema design, Authentication (bcrypt, sessions), Async Python (asyncio, aiogram)} \\
+     \textbf{Tools \& Workflow}{: Git / GitHub, GitHub Actions (basic), npm / pnpm, VS Code, Postman, Docker (basic), Linux (CLI, Bash), Blender (3D content)} \\
+     \textbf{Domain Interest}{: SaaS, fintech, dev tools, productivity products, e-commerce}
+    }}
+\end{itemize}
+\vspace{-16pt}
+
+%-----------LANGUAGES-----------
+\section{Spoken Languages}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item
+        Ukrainian (Native) \quad\textbullet\quad
+        English (Advanced \textbf{C1}) \quad\textbullet\quad
+        French (Intermediate \textbf{B1--B2}) \quad\textbullet\quad
+        German (Beginner \textbf{A1--A2})
+    }
+\end{itemize}
+\vspace{-16pt}
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{Personal Finance Manager} $|$ \emph{Node.js, Express, SQLite, Bootstrap, EJS, Chart.js}}{2026}
+    \resumeItemListStart
+      \resumeItem{Designed and implemented authentication module (bcrypt + sessions), multi-account architecture, REST API.}
+      \resumeItem{Built interactive analytics dashboard with Chart.js — multi-series time-series visualization with server-side aggregation via SQL \texttt{GROUP BY}.}
+      \resumeItem{Designed relational schema covering users, accounts, transactions, categories with referential integrity.}
+      \resumeItem{Team project (2 engineers); owned auth, accounts, dashboard, API layers end-to-end.}
+      \resumeItem{Repo: \href{https://github.com/d3Par1/Coursework_Web}{github.com/d3Par1/Coursework\_Web}}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Telegram Bots} $|$ \emph{Python, aiogram / python-telegram-bot, SQLite}}{2025--Present}
+    \resumeItemListStart
+      \resumeItem{Built several Telegram bots exploring command handlers, inline keyboards, FSM (finite-state machines), and webhook deployment.}
+      \resumeItem{Practiced async Python (\texttt{asyncio}), HTTP integration with external APIs, persistent state via SQLite.}
+      \resumeItem{Demonstrates rapid prototyping skills, comfort with conversational interfaces, end-to-end ownership of a small backend product.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Roblox Grinding Simulator} $|$ \emph{Lua, Vide reactive UI, Blender (3D assets)}}{2025--Present}
+    \resumeItemListStart
+      \resumeItem{Solo-developed gameplay loop, inventory, shop systems demonstrating real-time state management.}
+      \resumeItem{Designed adaptive UI with cross-device scaling, reactive UI architecture (Vide).}
+      \resumeItem{Created custom 3D assets and preview / marketing scenes in Blender — full ownership of code, UI, visual content.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{University Coursework — OOP \& System Software} $|$ \emph{C\#, C, C++}}{2025--2026}
+    \resumeItemListStart
+      \resumeItem{Designed object-oriented systems in C\# covering SOLID principles, design patterns, software architecture.}
+      \resumeItem{Implemented low-level system programs in C: memory management, process scheduling, IPC primitives.}
+      \resumeItem{Repo: \href{https://github.com/d3Par1/University-Repository}{github.com/d3Par1/University-Repository}}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Microcontroller Side Projects} $|$ \emph{C / C++, MicroPython, Arduino IDE}}{2025--Present}
+    \resumeItemListStart
+      \resumeItem{Hands-on experimentation with Raspberry Pi Pico W and ESP32 — GPIO, sensors, Wi-Fi connectivity.}
+      \resumeItem{Adds breadth: comfort with hardware-software boundaries and rapid prototyping outside the web stack.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-12pt}
+
+%-----------LEARNING ROADMAP-----------
+\section{In Progress (2026 Full-Stack Roadmap)}
+\begin{itemize}[leftmargin=0.15in, label={\small\textbullet}]
+    \small{
+      \item \textbf{TypeScript} --- migrating JavaScript projects to TS for type safety and DX.
+      \item \textbf{React + Next.js} --- modern SPA / SSR, hooks, server components.
+      \item \textbf{PostgreSQL} --- moving from SQLite to production-grade RDBMS, indexing, query planning.
+      \item \textbf{Docker \& docker-compose} --- containerizing dev environments, multi-service local stacks.
+      \item \textbf{Testing} --- Jest, Playwright, Supertest for end-to-end coverage.
+      \item \textbf{CI / CD} --- GitHub Actions pipelines, automated deployment.
+    }
+\end{itemize}
+\vspace{-12pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Igor Sikorsky Kyiv Polytechnic Institute (KPI)}{Sep. 2024 -- Jun. 2028 (expected)}
+    {B.Sc. Software Engineering \, $|$ \, Group ТВ-43}{Kyiv, Ukraine}
+    \resumeItemListStart
+      \resumeItem{\textbf{Relevant coursework:} Web Programming, Object-Oriented Analysis \& Design, Software Engineering Components, Data Structures \& Algorithms, Operating Systems, System Software Architecture.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-12pt}
+
+%-----------TRAININGS-----------
+\section{Trainings \& Self-Directed Learning}
+\begin{itemize}[leftmargin=0.15in, label={\small\textbullet}]
+    \small{
+      \item \textbf{Linux Basics} --- KodeKloud (online, 2024). Shell, file system, processes, networking basics.
+      \item \textbf{Web Programming Foundations} --- KPI structured course (2025--2026). HTTP, REST, SSR, RDBMS.
+      \item \textbf{Telegram Bot API \& async Python} --- self-paced, multiple side projects (2025--present).
+      \item \textbf{Blender 3D modeling} --- self-paced via official tutorials and community resources (2024--present).
+    }
+\end{itemize}
+\vspace{-12pt}
+
+%-----------ADDITIONAL-----------
+\section{Additional}
+\begin{itemize}[leftmargin=0.15in, label={\small\textbullet}]
+    \small{
+      \item \textbf{Self-learner:} Comfortable picking up new languages, frameworks, tools from official documentation. Recently: Vide (reactive Lua framework), Telegram Bot API, Blender pipeline.
+      \item \textbf{Multilingual collaborator:} Native Ukrainian, advanced English, intermediate French --- comfortable in international / remote teams.
+      \item \textbf{Open to:} Internship $\cdot$ Working Student $\cdot$ Junior roles (Kyiv / Remote / Hybrid / International remote).
+    }
+\end{itemize}
+
+\end{document}

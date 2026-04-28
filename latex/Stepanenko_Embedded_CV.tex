@@ -1,0 +1,238 @@
+%-------------------------
+% Stepanenko Nazar — Embedded / Miltech Software Engineer CV
+% Based on Jake's Resume template (https://github.com/jakegut/resume)
+% License: MIT
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{xcolor}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Accent color
+\definecolor{accent}{HTML}{1F6FB2}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries\color{accent}
+}{}{0em}{}[\color{accent}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%
+%-------------------------------------------
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Stepanenko Nazar} \\ \vspace{4pt}
+    \small {\color{accent}\textbf{Embedded / Miltech Software Engineer (Junior)}} \\ \vspace{4pt}
+    \faMapMarker* \, Kyiv, Ukraine \quad
+    \faEnvelope \, \href{mailto:gangsterstepa@gmail.com}{gangsterstepa@gmail.com} \quad
+    \faGithub \, \href{https://github.com/d3Par1}{github.com/d3Par1} \quad
+    \faLinkedin \, \href{https://www.linkedin.com/in/yourhandle}{LinkedIn} \quad
+    \faTelegram \, @yourhandle
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\small
+Computer Science student (2nd year, Igor Sikorsky KPI) focused on embedded systems, Linux, and unmanned platform software for defense applications. Strong foundation in C/C++ and systems programming, hands-on practice with Raspberry Pi Pico W and ESP32. Building experience toward STM32 bare-metal, FreeRTOS, and drone software stacks (PX4 / MAVLink) to contribute to Ukrainian miltech and autonomous-systems engineering.
+\vspace{-6pt}
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: C / C++, Python, C\#, JavaScript / Node.js, Lua, SQL, HTML/CSS} \\
+     \textbf{Embedded \& Systems}{: Raspberry Pi Pico W (hands-on), ESP32 (Wi-Fi/BLE), Linux (CLI, Bash), GPIO / UART / I\textsuperscript{2}C / SPI basics, RTOS concepts (learning), Real-time data \& sensor integration} \\
+     \textbf{Tools \& Workflow}{: Git / GitHub, VS Code, CLion, CMake / Makefiles, PlatformIO, Arduino IDE, Docker (basic), Wireshark (basic), Blender} \\
+     \textbf{Domain Interest}{: UAV / drone software, autonomous systems, sensor fusion, defense electronics, secure firmware}
+    }}
+\end{itemize}
+\vspace{-16pt}
+
+%-----------LANGUAGES-----------
+\section{Spoken Languages}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item
+        Ukrainian (Native) \quad\textbullet\quad
+        English (Advanced \textbf{C1}) \quad\textbullet\quad
+        French (Intermediate \textbf{B1--B2}) \quad\textbullet\quad
+        German (Beginner \textbf{A1--A2})
+    }
+\end{itemize}
+\vspace{-16pt}
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{Microcontroller Hands-On Practice} $|$ \emph{C/C++, MicroPython, Arduino IDE, PlatformIO}}{2025--Present}
+    \resumeItemListStart
+      \resumeItem{Self-driven exploratory projects on Raspberry Pi Pico W and ESP32: GPIO control, sensor reading, Wi-Fi connectivity, basic peripherals (LEDs, buttons, OLED, sensors).}
+      \resumeItem{Embedded development workflow practice: toolchain setup, flashing, serial debugging, datasheet reading.}
+      \resumeItem{Currently extending toward STM32 bare-metal (HAL/CMSIS) and FreeRTOS.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Personal Finance Manager} $|$ \emph{Node.js, Express, SQLite, Bootstrap, Chart.js}}{2026}
+    \resumeItemListStart
+      \resumeItem{Built full-stack web app with auth (bcrypt + sessions), multi-account architecture, REST API for transactions.}
+      \resumeItem{Designed interactive analytics dashboard with Chart.js, server-side aggregation via SQL \texttt{GROUP BY}.}
+      \resumeItem{Team project (2 engineers); owned authentication, accounts, dashboard, and API layers end-to-end.}
+      \resumeItem{Repo: \href{https://github.com/d3Par1/Coursework_Web}{github.com/d3Par1/Coursework\_Web}}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Telegram Bots} $|$ \emph{Python, aiogram / python-telegram-bot, SQLite}}{2025--Present}
+    \resumeItemListStart
+      \resumeItem{Built several Telegram bots exploring command handlers, inline keyboards, FSM, and webhook deployment.}
+      \resumeItem{Practiced async Python (\texttt{asyncio}), HTTP integration with external APIs, persistent state via SQLite.}
+      \resumeItem{End-to-end ownership of small backend products from requirements to deployment.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{University Coursework — System Software \& OOP} $|$ \emph{C, C++, C\#}}{2025--2026}
+    \resumeItemListStart
+      \resumeItem{Implemented low-level system programs in C: memory management, process scheduling, IPC primitives.}
+      \resumeItem{Designed object-oriented systems in C\# covering SOLID principles, design patterns, software architecture.}
+      \resumeItem{Repo: \href{https://github.com/d3Par1/University-Repository}{github.com/d3Par1/University-Repository}}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Roblox Grinding Simulator} $|$ \emph{Lua, Vide reactive UI, Blender}}{2025--Present}
+    \resumeItemListStart
+      \resumeItem{Solo-developed gameplay loop, inventory, shop systems demonstrating real-time state management.}
+      \resumeItem{Designed adaptive UI with cross-device scaling (mobile/desktop), reactive UI architecture.}
+      \resumeItem{Created custom 3D assets and preview scenes in Blender — full ownership of code, UI, visual content.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-12pt}
+
+%-----------LEARNING ROADMAP-----------
+\section{In Progress (2026 Embedded Roadmap)}
+\begin{itemize}[leftmargin=0.15in, label={\small\textbullet}]
+    \small{
+      \item STM32 bare-metal firmware (HAL/CMSIS): timers, interrupts, UART telemetry — telemetry transmitter prototype
+      \item FreeRTOS task scheduling: multi-task firmware with mutexes, queues, shared peripherals
+      \item MAVLink protocol: message parsing in C; integration with PX4 / ArduPilot SITL
+      \item Drone simulator (PX4 + Gazebo): autonomous mission scripting in Python / C++
+      \item ROS2 fundamentals: publisher / subscriber nodes, sensor data pipelines
+    }
+\end{itemize}
+\vspace{-12pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Igor Sikorsky Kyiv Polytechnic Institute (KPI)}{Sep. 2024 -- Jun. 2028 (expected)}
+    {B.Sc. Software Engineering \, $|$ \, Group ТВ-43}{Kyiv, Ukraine}
+    \resumeItemListStart
+      \resumeItem{\textbf{Relevant coursework:} System Software Architecture, Object-Oriented Analysis \& Design, Web Programming, Data Structures \& Algorithms, Software Engineering Components, Operating Systems.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-12pt}
+
+%-----------TRAININGS-----------
+\section{Trainings \& Self-Directed Learning}
+\begin{itemize}[leftmargin=0.15in, label={\small\textbullet}]
+    \small{
+      \item \textbf{Linux Basics} — KodeKloud (online, 2024). Shell, file system, processes, networking basics.
+      \item \textbf{Web Programming Foundations} — KPI structured course (2025--2026). HTTP, REST, SSR, RDBMS.
+      \item \textbf{Telegram Bot API \& async Python} — self-paced, multiple side projects (2025--present).
+      \item \textbf{Blender 3D modeling} — self-paced via official tutorials and community resources.
+      \item \textbf{Microcontroller hands-on} — self-paced experimentation with Raspberry Pi Pico W and ESP32.
+    }
+\end{itemize}
+\vspace{-12pt}
+
+%-----------ADDITIONAL-----------
+\section{Additional}
+\begin{itemize}[leftmargin=0.15in, label={\small\textbullet}]
+    \small{
+      \item \textbf{Defense-tech motivation:} Ukrainian engineer committed to contributing technical capability to defense and dual-use systems.
+      \item \textbf{Self-learner:} Comfortable picking up new languages, frameworks, hardware platforms from official documentation.
+      \item \textbf{Open to:} Internship $\cdot$ Working Student $\cdot$ Junior roles (Kyiv / Remote / Hybrid).
+    }
+\end{itemize}
+
+\end{document}
