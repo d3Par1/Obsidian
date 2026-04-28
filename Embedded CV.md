@@ -21,6 +21,9 @@ Computer Science student (2nd year, KPI) focused on embedded systems, Linux, and
 | Lua (Roblox) | RTOS concepts (learning) | Docker (basic) |
 | Python (basic) | Sensor integration, GPIO | PlatformIO |
 | SQL | Real-time data processing | Wireshark (basic) |
+|  |  | **Blender (3D modeling)** |
+
+**3D / Visualization:** Blender — self-taught 3D modeling for game assets and preview scenes (Roblox projects). Comfortable with mesh modeling, UV mapping, lighting, and rendering. Transferable to hardware visualization, technical mockups, and 3D-printable enclosures.
 
 **Languages:** Ukrainian (Native) · English (Advanced C1)
 
@@ -45,10 +48,11 @@ Computer Science student (2nd year, KPI) focused on embedded systems, Linux, and
 - **Repo:** github.com/d3Par1/University-Repository
 
 ### Roblox Grinding Simulator — Solo Game Project *(2025–Present)*
-**Stack:** Lua, Vide (reactive UI framework)
+**Stack:** Lua, Vide (reactive UI framework), Blender (3D assets)
 - Solo-developed gameplay loop, inventory, and shop systems demonstrating real-time state management.
 - Designed adaptive UI with cross-device scaling (mobile/desktop) — applicable foundation for HMI work.
 - Migrated from imperative to reactive UI architecture for maintainability.
+- Created custom 3D assets and preview/marketing scenes in Blender — full ownership of code, UI, and visual content.
 
 ### Linux Foundations — Self-Directed Study *(2024–Present)*
 - Completed core Linux fundamentals course (KodeKloud): shell, file systems, process management, networking basics.
