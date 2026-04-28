@@ -1,0 +1,133 @@
+%-------------------------
+% Stepanenko Nazar — Embedded / Miltech Software Engineer CV
+% STEM-style using moderncv class (Xavier Danaux)
+% License: LPPL
+%
+% Compile with: pdflatex (Overleaf default)
+%-------------------------
+
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% Style options:
+%   banking    — sidebar з контактами зліва, серйозний
+%   classic    — header з фото справа, традиційний (default)
+%   casual     — як classic, ширший
+%   fancy      — header з лівим sidebar
+%   oldstyle   — стиль до 2015
+% Спробуй кожен — заміни значення нижче
+\moderncvstyle{banking}
+
+% Color options: black, blue, green, red, orange, purple, grey
+% blue — default, найпопулярніший для tech
+\moderncvcolor{blue}
+
+% Adjust the page margins
+\usepackage[scale=0.78, top=1.5cm, bottom=1.5cm]{geometry}
+\setlength{\hintscolumnwidth}{3.2cm}    % ширина лівої колонки в banking style
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Personal data
+\name{Nazar}{Stepanenko}
+\title{Embedded / Miltech Software Engineer (Junior)}
+\address{Kyiv, Ukraine}{}{}
+\phone[mobile]{+38~(063)~XXX~XX~XX}
+\email{gangsterstepa@gmail.com}
+\homepage{github.com/d3Par1}
+\social[linkedin]{yourhandle}
+\social[github]{d3Par1}
+\social[telegram]{yourhandle}
+\extrainfo{Languages: UA (native), EN \textbf{C1}, FR \textbf{B1--B2}, DE \textbf{A1--A2}}
+
+\begin{document}
+
+\makecvtitle
+
+%-----------SUMMARY-----------
+\section{Summary}
+\cvitem{}{Computer Science student (2nd year, Igor Sikorsky KPI, group ТВ-43) focused on \textbf{embedded systems, Linux, and unmanned platform software for defense applications}. Strong foundation in C/C++ and systems programming, hands-on practice with Raspberry Pi Pico W and ESP32. Building experience toward STM32 bare-metal, FreeRTOS, and drone software stacks (PX4 / MAVLink) to contribute to Ukrainian miltech and autonomous-systems engineering.}
+
+%-----------EDUCATION-----------
+\section{Education}
+\cventry{Sep. 2024 -- Jun. 2028}
+        {B.Sc. Software Engineering}
+        {Igor Sikorsky Kyiv Polytechnic Institute (KPI)}
+        {Kyiv, Ukraine}
+        {Group ТВ-43}
+        {Relevant coursework: System Software Architecture, Object-Oriented Analysis \& Design, Web Programming, Data Structures \& Algorithms, Software Engineering Components, Operating Systems.}
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+\cvitem{Programming}{C / C++, Python, C\#, JavaScript / Node.js, Lua, SQL, HTML/CSS}
+\cvitem{Embedded \& Systems}{Raspberry Pi Pico W (hands-on), ESP32 (Wi-Fi/BLE), Linux (CLI, Bash), GPIO / UART / I\textsuperscript{2}C / SPI basics, RTOS concepts (learning), real-time data \& sensor integration}
+\cvitem{Tools \& Workflow}{Git / GitHub, VS Code, CLion, CMake / Makefiles, PlatformIO, Arduino IDE, Docker (basic), Wireshark (basic), Blender (3D modeling)}
+\cvitem{Domain Interest}{UAV / drone software, autonomous systems, sensor fusion, defense electronics, secure firmware}
+
+%-----------PROJECTS-----------
+\section{Projects}
+
+\cventry{2025 -- Present}
+        {Microcontroller Hands-On Practice}
+        {Self-directed, Raspberry Pi Pico W \& ESP32}
+        {}
+        {C / C++, MicroPython, Arduino IDE, PlatformIO}
+        {Self-driven exploratory projects: GPIO control, sensor reading, Wi-Fi connectivity, basic peripherals (LEDs, buttons, OLED, sensors). Built familiarity with embedded development workflow: toolchain setup, flashing, serial debugging, datasheet reading. Currently extending toward STM32 bare-metal (HAL/CMSIS) and FreeRTOS.}
+
+\cventry{2026}
+        {Personal Finance Manager}
+        {Full-stack web application (team of 2)}
+        {KPI coursework}
+        {Node.js, Express, SQLite, Bootstrap, EJS, Chart.js}
+        {Built auth (bcrypt + sessions), multi-account architecture, REST API, analytics dashboard with Chart.js. Owned authentication, accounts, dashboard, and API layers end-to-end. Repo: \href{https://github.com/d3Par1/Coursework_Web}{github.com/d3Par1/Coursework\_Web}}
+
+\cventry{2025 -- Present}
+        {Telegram Bots}
+        {Python side projects}
+        {}
+        {Python, aiogram / python-telegram-bot, SQLite}
+        {Built several Telegram bots exploring command handlers, inline keyboards, FSM (finite-state machines), webhook deployment. Practiced async Python (\texttt{asyncio}), HTTP integration with external APIs, persistent state via SQLite.}
+
+\cventry{2025 -- 2026}
+        {University Coursework — System Software \& OOP}
+        {KPI}
+        {}
+        {C, C++, C\#}
+        {Implemented low-level system programs in C (memory management, process scheduling, IPC primitives). Designed object-oriented systems in C\# covering SOLID principles, design patterns, software architecture. Repo: \href{https://github.com/d3Par1/University-Repository}{github.com/d3Par1/University-Repository}}
+
+\cventry{2025 -- Present}
+        {Roblox Grinding Simulator}
+        {Solo game project}
+        {}
+        {Lua, Vide reactive UI, Blender (3D assets)}
+        {Solo-developed gameplay loop, inventory, shop systems demonstrating real-time state management. Designed adaptive UI with cross-device scaling. Created custom 3D assets and preview scenes in Blender — full ownership of code, UI, visual content.}
+
+%-----------IN PROGRESS-----------
+\section{In Progress (2026 Embedded Roadmap)}
+\cvlistitem{\textbf{STM32 bare-metal firmware} — HAL/CMSIS, timers, interrupts, UART telemetry; telemetry-transmitter prototype.}
+\cvlistitem{\textbf{FreeRTOS} — multi-task firmware with mutexes, queues, shared peripherals.}
+\cvlistitem{\textbf{MAVLink protocol} — message parsing in C; integration with PX4 / ArduPilot SITL.}
+\cvlistitem{\textbf{Drone simulator (PX4 + Gazebo)} — autonomous mission scripting in Python / C++.}
+\cvlistitem{\textbf{ROS2 fundamentals} — publisher / subscriber nodes, sensor data pipelines.}
+
+%-----------TRAININGS-----------
+\section{Trainings \& Self-Directed Learning}
+\cvlistitem{\textbf{Linux Basics} --- KodeKloud (online, 2024). Shell, file system, processes, networking basics.}
+\cvlistitem{\textbf{Web Programming Foundations} --- KPI structured course (2025--2026). HTTP, REST, SSR, RDBMS.}
+\cvlistitem{\textbf{Telegram Bot API \& async Python} --- self-paced, multiple side projects (2025--present).}
+\cvlistitem{\textbf{Blender 3D modeling} --- self-paced via official tutorials and community resources.}
+\cvlistitem{\textbf{Microcontroller hands-on} --- self-paced experimentation with Raspberry Pi Pico W and ESP32.}
+
+%-----------LANGUAGES-----------
+\section{Spoken Languages}
+\cvitemwithcomment{Ukrainian}{Native}{}
+\cvitemwithcomment{English}{Advanced \textbf{C1}}{Reading docs, meetings, written communication}
+\cvitemwithcomment{French}{Intermediate \textbf{B1--B2}}{Comfortable in international/remote teams}
+\cvitemwithcomment{German}{Beginner \textbf{A1--A2}}{Improving}
+
+%-----------ADDITIONAL-----------
+\section{Additional}
+\cvlistitem{\textbf{Defense-tech motivation:} Ukrainian engineer committed to contributing technical capability to defense and dual-use systems.}
+\cvlistitem{\textbf{Self-learner:} Comfortable picking up new languages, frameworks, hardware platforms from official documentation.}
+\cvlistitem{\textbf{Open to:} Internship $\cdot$ Working Student $\cdot$ Junior roles (Kyiv / Remote / Hybrid).}
+
+\end{document}

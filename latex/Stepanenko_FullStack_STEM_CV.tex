@@ -1,0 +1,121 @@
+%-------------------------
+% Stepanenko Nazar — Full-Stack / Web Developer CV
+% STEM-style using moderncv class (Xavier Danaux)
+% License: LPPL
+%-------------------------
+
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% Try changing these to see different looks:
+\moderncvstyle{banking}    % banking | classic | casual | fancy | oldstyle
+\moderncvcolor{green}      % black | blue | green | red | orange | purple | grey
+
+\usepackage[scale=0.78, top=1.5cm, bottom=1.5cm]{geometry}
+\setlength{\hintscolumnwidth}{3.2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Personal data
+\name{Nazar}{Stepanenko}
+\title{Full-Stack / Web Developer (Junior)}
+\address{Kyiv, Ukraine}{}{}
+\phone[mobile]{+38~(063)~XXX~XX~XX}
+\email{gangsterstepa@gmail.com}
+\homepage{github.com/d3Par1}
+\social[linkedin]{yourhandle}
+\social[github]{d3Par1}
+\social[telegram]{yourhandle}
+\extrainfo{Languages: UA (native), EN \textbf{C1}, FR \textbf{B1--B2}, DE \textbf{A1--A2}}
+
+\begin{document}
+
+\makecvtitle
+
+%-----------SUMMARY-----------
+\section{Summary}
+\cvitem{}{Computer Science student (2nd year, Igor Sikorsky KPI, group ТВ-43) building \textbf{production-style full-stack web applications} with Node.js, Express, and modern frontend tooling. Recently shipped a finance-management web app as a team coursework, plus several side projects in Python (Telegram bots), Lua (Roblox), and 3D content (Blender). Looking for an internship or working-student role to grow as a full-stack engineer in a product-driven team.}
+
+%-----------EDUCATION-----------
+\section{Education}
+\cventry{Sep. 2024 -- Jun. 2028}
+        {B.Sc. Software Engineering}
+        {Igor Sikorsky Kyiv Polytechnic Institute (KPI)}
+        {Kyiv, Ukraine}
+        {Group ТВ-43}
+        {Relevant coursework: Web Programming, Object-Oriented Analysis \& Design, Software Engineering Components, Data Structures \& Algorithms, Operating Systems, System Software Architecture.}
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+\cvitem{Programming}{JavaScript / Node.js, Python, C\#, C / C++, Lua, SQL, HTML, CSS}
+\cvitem{Web \& Backend}{Express.js, REST API design, EJS, Bootstrap 5, Chart.js, SQL (SQLite) schema design, Authentication (bcrypt, sessions), Async Python (asyncio, aiogram)}
+\cvitem{Tools \& Workflow}{Git / GitHub, GitHub Actions (basic), npm / pnpm, VS Code, Postman, Docker (basic), Linux (CLI, Bash), Blender (3D content)}
+\cvitem{Domain Interest}{SaaS, fintech, dev tools, productivity products, e-commerce}
+
+%-----------PROJECTS-----------
+\section{Projects}
+
+\cventry{2026}
+        {Personal Finance Manager}
+        {Full-stack web application (team of 2)}
+        {KPI coursework}
+        {Node.js, Express, SQLite, Bootstrap, EJS, Chart.js}
+        {Designed and implemented authentication (bcrypt + sessions), multi-account architecture, REST API for transaction management. Built interactive analytics dashboard with Chart.js — multi-series time-series visualization with server-side aggregation via SQL \texttt{GROUP BY}. Owned auth, accounts, dashboard, API end-to-end. Repo: \href{https://github.com/d3Par1/Coursework_Web}{github.com/d3Par1/Coursework\_Web}}
+
+\cventry{2025 -- Present}
+        {Telegram Bots}
+        {Python side projects}
+        {}
+        {Python, aiogram / python-telegram-bot, SQLite}
+        {Built several Telegram bots exploring command handlers, inline keyboards, FSM, webhook deployment. Practiced async Python (\texttt{asyncio}), HTTP integration with external APIs, persistent state via SQLite. End-to-end ownership of small backend products from requirements to deployment.}
+
+\cventry{2025 -- Present}
+        {Roblox Grinding Simulator}
+        {Solo game project}
+        {}
+        {Lua, Vide reactive UI, Blender (3D assets)}
+        {Solo-developed gameplay loop, inventory, shop systems demonstrating real-time state management. Designed adaptive UI with cross-device scaling, reactive UI architecture. Created custom 3D assets and preview / marketing scenes in Blender — full ownership of code, UI, visual content.}
+
+\cventry{2025 -- 2026}
+        {University Coursework — OOP \& System Software}
+        {KPI}
+        {}
+        {C\#, C, C++}
+        {Designed object-oriented systems in C\# covering SOLID principles, design patterns, software architecture. Implemented low-level system programs in C: memory management, process scheduling, IPC primitives. Repo: \href{https://github.com/d3Par1/University-Repository}{github.com/d3Par1/University-Repository}}
+
+\cventry{2025 -- Present}
+        {Microcontroller Side Projects}
+        {Self-directed, Raspberry Pi Pico W \& ESP32}
+        {}
+        {C / C++, MicroPython, Arduino IDE}
+        {Hands-on experimentation with Pico W and ESP32 — GPIO, sensors, Wi-Fi connectivity. Adds breadth: comfort with hardware-software boundaries and rapid prototyping outside the web stack.}
+
+%-----------IN PROGRESS-----------
+\section{In Progress (2026 Full-Stack Roadmap)}
+\cvlistitem{\textbf{TypeScript} --- migrating JavaScript projects to TS for type safety and DX.}
+\cvlistitem{\textbf{React + Next.js} --- modern SPA / SSR, hooks, server components.}
+\cvlistitem{\textbf{PostgreSQL} --- moving from SQLite to production-grade RDBMS, indexing, query planning.}
+\cvlistitem{\textbf{Docker \& docker-compose} --- containerizing dev environments, multi-service local stacks.}
+\cvlistitem{\textbf{Testing} --- Jest, Playwright, Supertest for end-to-end coverage.}
+\cvlistitem{\textbf{CI / CD} --- GitHub Actions pipelines, automated deployment.}
+
+%-----------TRAININGS-----------
+\section{Trainings \& Self-Directed Learning}
+\cvlistitem{\textbf{Linux Basics} --- KodeKloud (online, 2024). Shell, file system, processes, networking basics.}
+\cvlistitem{\textbf{Web Programming Foundations} --- KPI structured course (2025--2026). HTTP, REST, SSR, RDBMS.}
+\cvlistitem{\textbf{Telegram Bot API \& async Python} --- self-paced, multiple side projects (2025--present).}
+\cvlistitem{\textbf{Blender 3D modeling} --- self-paced via official tutorials and community resources (2024--present).}
+
+%-----------LANGUAGES-----------
+\section{Spoken Languages}
+\cvitemwithcomment{Ukrainian}{Native}{}
+\cvitemwithcomment{English}{Advanced \textbf{C1}}{Reading docs, meetings, written communication}
+\cvitemwithcomment{French}{Intermediate \textbf{B1--B2}}{Comfortable in international/remote teams}
+\cvitemwithcomment{German}{Beginner \textbf{A1--A2}}{Improving}
+
+%-----------ADDITIONAL-----------
+\section{Additional}
+\cvlistitem{\textbf{Self-learner:} Comfortable picking up new languages, frameworks, tools from official documentation. Recently: Vide (reactive Lua framework), Telegram Bot API, Blender pipeline.}
+\cvlistitem{\textbf{Multilingual collaborator:} Native Ukrainian, advanced English, intermediate French --- comfortable in international / remote teams.}
+\cvlistitem{\textbf{Open to:} Internship $\cdot$ Working Student $\cdot$ Junior roles (Kyiv / Remote / Hybrid / International remote).}
+
+\end{document}
