@@ -350,14 +350,14 @@ Skills: C · C++ · C# · OOP · Systems Programming · Design Patterns
 
 Click **"Open to" → "Finding a new job"** і заповни:
 
-| Поле | Значення для embedded/drone tracking |
-|---|---|
+| Поле           | Значення для embedded/drone tracking                                                                                                                                                                                                                     |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Job titles** | Embedded Engineer Intern · Embedded Software Engineer Junior · Firmware Engineer Intern · UAV Software Engineer Intern · Drone Software Engineer · Microcontroller Programmer · IoT Developer Intern · C/C++ Developer Intern · Working Student Embedded |
-| **Locations** | Kyiv, Ukraine · Remote (Ukraine) · Remote (EMEA) · Lviv (якщо готовий) |
-| **Start date** | Immediately |
-| **Job types** | Internship · Part-time · Contract |
-| **Workplace** | Remote · Hybrid · On-site |
-| **Visibility** | All LinkedIn members (з #OpenToWork рамкою на фото) |
+| **Locations**  | Kyiv, Ukraine · Remote (Ukraine) · Remote (EMEA) · Lviv (якщо готовий)                                                                                                                                                                                   |
+| **Start date** | Immediately                                                                                                                                                                                                                                              |
+| **Job types**  | Internship · Part-time · Contract                                                                                                                                                                                                                        |
+| **Workplace**  | Remote · Hybrid · On-site                                                                                                                                                                                                                                |
+| **Visibility** | All LinkedIn members (з #OpenToWork рамкою на фото)                                                                                                                                                                                                      |
 
 ⚠️ **Важлива настройка:** обери "All members" (не тільки рекрутери) — для defense-стартапів CTO часто шукає кандидатів сам.
 
