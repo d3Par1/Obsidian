@@ -562,8 +562,8 @@ https://www.linkedin.com/jobs/search/?keywords=drone%20software%20engineer&f_WT=
 ## 1️⃣5️⃣ 30-ДЕННИЙ ПЛАН ЗАПУСКУ ПРОФІЛЮ
 
 ### Тиждень 1 — Setup
-- [ ] Photo + Banner (Canva, ~1 година)
-- [ ] Headline (вибрати один з 3 варіантів вище)
+- [x] Photo + Banner (Canva, ~1 година)
+- [x] Headline (вибрати один з 3 варіантів вище)
 - [ ] About section (адаптувати шаблон вище)
 - [ ] Education заповнено
 - [ ] Skills 30+ додані (з 7-ми категорій)
