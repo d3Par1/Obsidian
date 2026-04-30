@@ -244,7 +244,7 @@ Sensor Fusion (learning) · ROS2 (learning) · Gazebo (learning)
 
 ### Linux / Systems:
 ```
-Linux · Bash · Shell Scripting · systemd (basic) · Git · GitHub · Docker · 
+	Linux · Bash · Shell Scripting · systemd (basic) · Git · GitHub · Docker · 
 Networking · TCP/IP basics
 ```
 
