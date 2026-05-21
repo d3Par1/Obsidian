@@ -1,6 +1,6 @@
 # Rider — Підсвічування SOLID / GoF / GRASP у коді
 
-> Як налаштувати JetBrains Rider, щоб клас, метод чи рядок коду візуально позначався який принцип/патерн він демонструє. Робоча демонстрація — у файлі `SingletonPattern.cs` ([LR2](../../../University-Repository/Year-2/Semester-2/OOA/LR/LR2/CreationalPatterns/Patterns/SingletonPattern.cs)).
+> Як налаштувати JetBrains Rider, щоб клас, метод чи рядок коду візуально позначався який принцип/патерн він демонструє. Робоча демонстрація — у файлі `SingletonPattern.cs` ([LR2](../../../University-Repository/Year-2/Semester-2/OOA/LR/LR2/Task3_Singleton/SingletonPattern.cs)).
 
 ## Підсумок: 4 техніки, що працюють разом
 
@@ -126,7 +126,7 @@ public sealed class LogService { ... }
 
 ### Файл `Annotations.cs` у проєкті
 
-Створено: [Annotations.cs](../../../University-Repository/Year-2/Semester-2/OOA/LR/LR2/CreationalPatterns/Annotations.cs)
+Створено: [Annotations.cs](../../../University-Repository/Year-2/Semester-2/OOA/LR/LR2/Annotations.cs)
 
 ```csharp
 namespace CreationalPatterns;
@@ -189,7 +189,7 @@ public sealed class LogService { ... }
 
 ## Усе разом — реальний приклад у моєму коді
 
-Файл: [SingletonPattern.cs](../../../University-Repository/Year-2/Semester-2/OOA/LR/LR2/CreationalPatterns/Patterns/SingletonPattern.cs)
+Файл: [SingletonPattern.cs](../../../University-Repository/Year-2/Semester-2/OOA/LR/LR2/Task3_Singleton/SingletonPattern.cs)
 
 Що там зараз:
 - `#region GoF:Singleton + SOLID-аналіз` — групує клас + аналіз.
@@ -203,7 +203,7 @@ public sealed class LogService { ... }
 
 ## Як перенести на ЛР3 та ЛР4
 
-1. Скопіювати `Annotations.cs` із LR2 у LR3/`StructuralPatterns/` та LR4/`BehavioralPatterns/` (змінити namespace на `StructuralPatterns` чи `BehavioralPatterns` відповідно).
+1. Скопіювати `Annotations.cs` (одна копія на кожну task-папку) — у LR3/Task1_Adapter/, LR3/Task2_Facade/ і т. д. Namespace у файлі має співпадати з папкою (наприклад, `namespace Task1_Adapter;`).
 2. Поступово додати `[Applies]` + XML doc до основних класів кожного патерну.
 3. Якщо хочеш узагальнити — винеси `Annotations.cs` у спільну `Common/` бібліотеку і референси з усіх проєктів.
 

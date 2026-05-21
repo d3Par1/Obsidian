@@ -119,7 +119,7 @@
 
 ### Як перевірити на твоєму коді
 
-Відкрий `StatePattern.cs` ([LR4](../../../University-Repository/Year-2/Semester-2/OOA/LR/LR4/BehavioralPatterns/Patterns/StatePattern.cs)). Біля кожного `Tick()` методу у `CleaningState`, `SeekingBaseState`, `StuckState` буде стрілка ↑ — клік → перехід до базового `IVacuumState.Tick()`. Біля інтерфейсного методу `IVacuumState.Tick()` — стрілка ↓ → список 3 реалізацій.
+Відкрий `StatePattern.cs` ([LR4](../../../University-Repository/Year-2/Semester-2/OOA/LR/LR4/Task3_State/StatePattern.cs)). Біля кожного `Tick()` методу у `CleaningState`, `SeekingBaseState`, `StuckState` буде стрілка ↑ — клік → перехід до базового `IVacuumState.Tick()`. Біля інтерфейсного методу `IVacuumState.Tick()` — стрілка ↓ → список 3 реалізацій.
 
 ---
 
@@ -211,7 +211,7 @@ new Character(name: "Назар", class: Warrior, hp: 100);
 
 ```
 ─────── Sticky area ───────
-namespace BehavioralPatterns.Patterns;
+namespace Task3_State;
 public sealed class VacuumRobot
 public void Tick()
     if (Battery < 20)
@@ -409,7 +409,7 @@ Restart Rider
 
 ## 12. Як перевірити, що все працює
 
-Після всіх налаштувань відкрий `SingletonPattern.cs` (з [Annotations.cs](../../../University-Repository/Year-2/Semester-2/OOA/LR/LR2/CreationalPatterns/Annotations.cs) + анотаціями). Перевір:
+Після всіх налаштувань відкрий `SingletonPattern.cs` (з [Annotations.cs](../../../University-Repository/Year-2/Semester-2/OOA/LR/LR2/Annotations.cs) + анотаціями). Перевір:
 
 | Феча | Що бачиш |
 |---|---|
