@@ -22,7 +22,7 @@
 
 Красиво оформлені звіти з callouts, mermaid-діаграмами, ==highlight==, before/after таблицями:
 
-- [[Звіти/ЛР1 — Принципи SOLID]] 🧩 — 4 порушення SOLID з виправленнями
+- [[Звіти/ЛР1 — Принципи SOLID]] 🧩 — 5 порушень SOLID з виправленнями (SRP, DIP, OCP, ISP, LSP)
 - [[Звіти/ЛР2 — Породжувальні патерни]] 🏗 — 5 патернів (Builder, AbstractFactory, Singleton, Prototype, FactoryMethod)
 - [[Звіти/ЛР3 — Структурні патерни]] 🏛 — 7 патернів (Adapter, Facade, Proxy, Composite, Decorator, Bridge, Flyweight)
 - [[Звіти/ЛР4 — Поведінкові патерни]] 🎭 — 10 патернів (Observer, Strategy, State, Memento, CoR, TemplateMethod, Command, Iterator, Mediator, Visitor)
