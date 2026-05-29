@@ -56,6 +56,11 @@
       "resolved": "https://github.com/quartz-community/description.git",
       "commit": "026e63bd46d5f7feed58373f999ed98bf8248a26"
     },
+    "encrypted-pages": {
+      "source": "github:quartz-community/encrypted-pages",
+      "resolved": "https://github.com/quartz-community/encrypted-pages.git",
+      "commit": "e0e08e7afa40b97909fb24fd7509ddaa10116425"
+    },
     "explorer": {
       "source": "github:quartz-community/explorer",
       "resolved": "https://github.com/quartz-community/explorer.git",
@@ -125,6 +130,11 @@
       "source": "github:quartz-community/spacer",
       "resolved": "https://github.com/quartz-community/spacer.git",
       "commit": "64b135dcfb78c4911f8c42d942872d645cd2a456"
+    },
+    "stacked-pages": {
+      "source": "github:quartz-community/stacked-pages",
+      "resolved": "https://github.com/quartz-community/stacked-pages.git",
+      "commit": "9d67b8dedab5c27db98afd26dfa773e5003b0446"
     },
     "syntax-highlighting": {
       "source": "github:quartz-community/syntax-highlighting",
