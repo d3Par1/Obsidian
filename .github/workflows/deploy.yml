@@ -35,12 +35,12 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Clone Quartz
-        run: git clone --depth 1 https://github.com/jackyzha0/quartz.git /tmp/quartz
+      - name: Clone Quartz (v5 branch)
+        run: git clone --branch v5 --depth 1 https://github.com/jackyzha0/quartz.git /tmp/quartz
 
       - name: Install Quartz dependencies
         working-directory: /tmp/quartz
-        run: npm install
+        run: npm ci
 
       - name: Copy vault notes into Quartz content
         run: |
@@ -53,11 +53,15 @@ jobs:
             --prune-empty-dirs \
             ./ /tmp/quartz/content/
 
-      - name: Apply custom theme
+      - name: Apply vault config, lockfile, and custom theme
         run: |
-          cp .quartz/quartz.config.ts /tmp/quartz/quartz.config.ts
-          cp .quartz/quartz.layout.ts /tmp/quartz/quartz.layout.ts
+          cp .quartz/quartz.config.yaml /tmp/quartz/quartz.config.yaml
+          cp .quartz/quartz.lock.json /tmp/quartz/quartz.lock.json
           cp .quartz/custom.scss /tmp/quartz/quartz/styles/custom.scss
+
+      - name: Install Quartz community plugins
+        working-directory: /tmp/quartz
+        run: npx quartz plugin install
 
       - name: Build Quartz
         working-directory: /tmp/quartz
