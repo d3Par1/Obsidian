@@ -18,6 +18,7 @@ title: KPI Notes
 - [[LinkedIn Setup]]
 - [[GitHub Profile README]]
 - [[Interview Prep Master]]
+- [[Дзвінок з Тімлідом — Підготовка]]
 
 > [!note]
 > Цей сайт — приватний. Доступ до вмісту захищено паролем.
