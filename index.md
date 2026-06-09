@@ -19,6 +19,7 @@ title: KPI Notes
 - [[GitHub Profile README]]
 - [[Interview Prep Master]]
 - [[Дзвінок з Тімлідом — Підготовка]]
+- [[Співбесіда — Embedded UAV (Smart Solutions)]]
 
 > [!note]
 > Цей сайт — приватний. Доступ до вмісту захищено паролем.
