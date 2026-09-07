@@ -1,0 +1,123 @@
+filters:
+  and:
+    - file.path.startsWith("Tasks/")
+    - note.due
+
+formulas:
+  due_fmt: 'note.due.format("DD MMM YYYY")'
+  due_rel: 'note.due.relative()'
+  left: '(note.due - today()).days'
+
+properties:
+  note.course:
+    displayName: Курс
+  note.type:
+    displayName: Тип
+  note.due:
+    displayName: Дедлайн
+  note.status:
+    displayName: Статус
+  note.period:
+    displayName: Семестр
+  formula.due_fmt:
+    displayName: Дата
+  formula.due_rel:
+    displayName: Залишилось
+  formula.left:
+    displayName: Днів
+
+views:
+  - type: table
+    name: 🔥 Актуальні
+    filters:
+      and:
+        - 'note.status != "done"'
+        - 'note.period == "2026-27"'
+    order:
+      - formula.due_fmt
+      - formula.due_rel
+      - file.name
+      - note.course
+      - note.type
+    sort:
+      - property: note.due
+        direction: ASC
+
+  - type: table
+    name: 🔴 Прострочені
+    filters:
+      and:
+        - 'note.status != "done"'
+        - 'note.due < today()'
+    order:
+      - formula.due_fmt
+      - formula.due_rel
+      - file.name
+      - note.course
+    sort:
+      - property: note.due
+        direction: ASC
+
+  - type: table
+    name: 🟠 Цей тиждень
+    filters:
+      and:
+        - 'note.status != "done"'
+        - 'note.due >= today()'
+        - 'note.due <= today() + "7d"'
+    order:
+      - formula.due_fmt
+      - formula.due_rel
+      - file.name
+      - note.course
+      - note.type
+    sort:
+      - property: note.due
+        direction: ASC
+
+  - type: table
+    name: 📅 Наступні 30 днів
+    filters:
+      and:
+        - 'note.status != "done"'
+        - 'note.due >= today()'
+        - 'note.due <= today() + "30d"'
+    order:
+      - formula.due_fmt
+      - formula.due_rel
+      - file.name
+      - note.course
+      - note.type
+    sort:
+      - property: note.due
+        direction: ASC
+
+  - type: table
+    name: 📚 За курсом
+    filters:
+      and:
+        - 'note.status != "done"'
+    order:
+      - file.name
+      - formula.due_fmt
+      - note.type
+    groupBy:
+      property: note.course
+      direction: ASC
+    sort:
+      - property: note.due
+        direction: ASC
+
+  - type: table
+    name: 🗄 Архів 2025-26
+    filters:
+      and:
+        - 'note.period == "2025-26"'
+    order:
+      - formula.due_fmt
+      - file.name
+      - note.course
+      - note.type
+    sort:
+      - property: note.due
+        direction: ASC
