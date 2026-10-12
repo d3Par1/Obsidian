@@ -3,7 +3,7 @@ course: 3 курс (ТВ,ТР-43). 1 семестр Практичний кур�
 type: завдання
 due: 2026-10-05
 time: "23:59"
-status: todo
+status: done
 year: 3
 semester: 1
 period: 2026-27
