@@ -57,20 +57,26 @@ Embedded Software Engineer | C/C++ · STM32 · FreeRTOS · Bare-metal · Embedde
 ```
 🎯 Embedded firmware engineer in Ukrainian defense tech.
 
-Software Engineering student at Igor Sikorsky Kyiv Polytechnic Institute and an
-embedded engineer at Ortaveron, writing C/C++ firmware for unmanned platforms.
+Software Engineering student at Igor Sikorsky Kyiv Polytechnic Institute and an embedded
+engineer at Ortaveron, writing C/C++ firmware for unmanned platforms. I work across the
+whole device — from hardware registers up to embedded Linux.
 
-🛠️ Day to day:
-• Bare-metal C/C++ on STM32 (ARM Cortex-M) — CMSIS, HAL and register-level (LL)
-  drivers; FreeRTOS; GPIO / UART / SPI / I²C
-• Embedded Linux: Yocto Project image builds, U-Boot, board bring-up, serial flashing
-• MAVLink, arm-none-eabi toolchain, Linux (CLI, Bash), Git
+🛠️ What I work with:
+• Bare-metal C/C++ on STM32 (ARM Cortex-M) — CMSIS, HAL and register-level (LL) drivers
+• FreeRTOS — tasks, queues, semaphores, mutexes, ISR-to-task handoff
+• Peripherals and buses: GPIO, UART, SPI, I²C
+• Embedded Linux: Yocto Project images (BitBake layers/recipes), U-Boot, board bring-up
+• MAVLink, arm-none-eabi toolchain, Git, Linux (CLI, Bash)
 • Hardware debugging: logic analyzer, oscilloscope, datasheet-driven diagnostics
+• Internal tooling: flashing and serial utilities (Python, .NET/Avalonia)
 
-🧰 Also built: desktop tooling for flashing and serial workflows (Python, .NET/Avalonia);
-   earlier work on ESP32 / Raspberry Pi Pico W and a full-stack Node.js application.
+📈 What I'm growing into (2027):
+• Linux device drivers and device tree — kernel side, not just userspace
+• Zephyr RTOS and CAN bus
+• DMA, low-power design, and firmware unit testing (Unity/Ceedling) in CI
+• Secure boot and signed firmware updates
 
-🔧 Open source: C/C++ embedded-drivers + FreeRTOS learning repo —
+🔧 Open source: C/C++ embedded-drivers + FreeRTOS reference repo —
    github.com/d3Par1/cpp-basics
 
 💪 Why defense tech: Ukraine's defense industry is one of the most innovative tech
